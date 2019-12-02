@@ -42,7 +42,7 @@ public class loginTest {
         driver.get("https://m.meetville.com/");
         new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.cssSelector(".px-3 > svg")));
         driver.findElement(By.cssSelector(".px-3 > svg")).click();
-        new WebDriverWait(driver,20).until(ExpectedConditions.elementToBeClickable(By.cssSelector("a[href*='/login']")));
+        new WebDriverWait(driver,20).until(ExpectedConditions.elementToBeClickable(By.cssSelector("a[href*='']")));
         driver.findElement(By.cssSelector("a[href*='/login']")).click();
         new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.name("email")));
         driver.findElement(By.name("email")).click();
