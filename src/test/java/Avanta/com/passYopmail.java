@@ -1,6 +1,5 @@
 package Avanta.com;
 
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -11,8 +10,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.util.HashMap;
 import java.util.Map;
 
-import static com.sun.org.apache.xerces.internal.util.PropertyState.is;
-import static org.junit.Assert.assertThat;
 
 public class passYopmail {
     private WebDriver driver;
@@ -36,10 +33,13 @@ String pas;
         driver.findElement(By.id("login")).click();
         driver.findElement(By.id("login")).sendKeys("test.payment1");
         driver.findElement(By.cssSelector(".sbut")).click();
-        driver.findElement(By.cssSelector("a[href*='']")).click();
+        // driver.findElement(By.cssSelector("#m2 .lms")).click();
+
+        driver.findElement(By.xpath("/div/a/span/input[contains(.., 'Welcome to Meetville')]")).click();
+        //driver.findElement(By.cssSelector("a[href*='']")).click();
         //assertThat(driver.findElement(By.cssSelector("#m2 .lms")).getText(),is(("Welcome to Meetville")));
-        pas = driver.findElement(By.cssSelector("#m2 .lms")).getText();
-        System.out.println(pas);
+        // pas = driver.findElement(By.cssSelector("#m2 .lms")).getText();
+        //System.out.println(pas);
 
     }
 
