@@ -13,11 +13,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.HashMap;
 import java.util.Map;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
+public class deletePaymentUser {
 
-
-public class loginTest {
     private WebDriver driver;
     private Map<String, Object> vars;
     JavascriptExecutor js;
@@ -26,7 +23,7 @@ public class loginTest {
     @Before
     public void setUp() {
         System.setProperty("webdriver.chrome.driver", "src/recources/chromedriver.exe");
-       driver = new ChromeDriver();
+        driver = new ChromeDriver();
         js = (JavascriptExecutor) driver;
         vars = new HashMap<String, Object>();
 
@@ -37,7 +34,7 @@ public class loginTest {
     }
 
     @Test
-    public void logIn() {
+    public void deleteUser() {
 
         driver.get("https://m.meetville.com/");
         new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.cssSelector(".px-3 > svg")));
@@ -46,15 +43,28 @@ public class loginTest {
         driver.findElement(By.cssSelector("a[href*='/login']")).click();
         new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.name("email")));
         driver.findElement(By.name("email")).click();
-        driver.findElement(By.name("email")).sendKeys("test.pingui@yopmail.com");
+        driver.findElement(By.name("email")).sendKeys("test.payment1@yopmail.com");
         driver.findElement(By.name("password")).click();
-        driver.findElement(By.name("password")).sendKeys("111111");
+        String passwordPayment = "111111";  // удалить после нормальной реализации
+        driver.findElement(By.name("password")).sendKeys(passwordPayment);
         driver.findElement(By.cssSelector("button[class*='Button']")).click();
         new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.className("text-title-medium")));
-        assertThat(driver.findElement(By.className("text-title-medium")).getText(),is("People Nearby"));
+        driver.findElement(By.id("Layer_1___1847921000")).click();
+        new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.cssSelector("a[href*='/myProfile']")));
+        driver.findElement(By.cssSelector("a[href*='/myProfile']")).click();
+        new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.cssSelector("a[href*='/settings'")));
+        driver.findElement(By.cssSelector("a[href*='/settings'")).click();
+        new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.cssSelector("a[href*='/settings/accountSettings")));
+        driver.findElement(By.cssSelector("a[href*='/settings/accountSettings")).click();
+        new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.cssSelector("a[href*='/settings/accountSettings/changeEmail")));
+        driver.findElement(By.cssSelector("a[href*='/settings/accountSettings/changeEmail")).click();
+
     }
+
     @After
     public void tearDown() {
         driver.quit();
     }
 }
+
+
