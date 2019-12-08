@@ -6,7 +6,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.awt.*;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -33,13 +36,17 @@ String pas;
         driver.findElement(By.id("login")).click();
         driver.findElement(By.id("login")).sendKeys("test.payment1");
         driver.findElement(By.cssSelector(".sbut")).click();
-        // driver.findElement(By.cssSelector("#m2 .lms")).click();
+        driver.switchTo().defaultContent();
+        driver.switchTo().frame(1);
+        driver.findElement(By.partialLinkText("Welcome to Meetville")).click();
+        driver.switchTo().defaultContent();
+        driver.switchTo().frame(driver.findElement(By.id("ifmail")));
+        new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//span[contains(text(),'Password:')]")));
+        //String a = driver.findElement(By.xpath("//span[contains(text(),'Password:')]")).getText();
+        //System.out.println(a);
+        String pass = driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[3]/div[2]/div[1]/div[1]/table[1]/tbody[1]/tr[3]/td[1]/table[1]/tbody[1]/tr[1]/td[1]/table[1]/tbody[1]/tr[1]/td[1]/table[1]/tbody[1]/tr[6]/td[1]/span[1]")).getText();
+        System.out.println(pass);
 
-        driver.findElement(By.xpath("/div/a/span/input[contains(.., 'Welcome to Meetville')]")).click();
-        //driver.findElement(By.cssSelector("a[href*='']")).click();
-        //assertThat(driver.findElement(By.cssSelector("#m2 .lms")).getText(),is(("Welcome to Meetville")));
-        // pas = driver.findElement(By.cssSelector("#m2 .lms")).getText();
-        //System.out.println(pas);
 
     }
 
