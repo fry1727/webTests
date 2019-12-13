@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -26,14 +27,11 @@ public class loginTest {
     @Before
     public void setUp() {
         System.setProperty("webdriver.chrome.driver", "src/recources/chromedriver.exe");
-       driver = new ChromeDriver();
-        js = (JavascriptExecutor) driver;
-        vars = new HashMap<String, Object>();
-
-
-        //ChromeOptions options = new ChromeOptions();
-        //options.addArguments("user-agent=\"Mozilla/5.0 (iPhone; CPU iPhone OS 11_2_1 like Mac OS X) AppleWebKit/604.1.34 (KHTML, like Gecko) CriOS/63.0.3239.73 Mobile/15C153 Safari/604.1\"");
-        //new ChromeDriver(options);
+        ChromeOptions options = new ChromeOptions();
+        Map<String, Object> prefs = new HashMap<String, Object>();
+        prefs.put("profile.default_content_setting_values.notifications", 2); //1-Allow, 2-Block, 0-default
+        options.setExperimentalOption("prefs", prefs);
+        driver = new ChromeDriver(options);
     }
 
     @Test
