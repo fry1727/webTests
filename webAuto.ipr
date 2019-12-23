@@ -81,7 +81,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/webAuto.iml" filepath="$PROJECT_DIR$/webAuto.iml" />
-      <module fileurl="file://$PROJECT_DIR$/webAuto.iml" filepath="$PROJECT_DIR$/webAuto.iml" />
     </modules>
   </component>
   <component name="ProjectRootManager" version="2" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
