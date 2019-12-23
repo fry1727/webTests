@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4e5bb92d-28c0-4bcc-8011-77298ed661e9" name="Default" comment="23.12.19 home part">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/Avanta/com/rememberPassw.class" afterPath="$PROJECT_DIR$/target/test-classes/Avanta/com/rememberPassw.class" />
+    <list default="true" id="4e5bb92d-28c0-4bcc-8011-77298ed661e9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/Avanta/com/regNewPaymentUser.java" afterPath="$PROJECT_DIR$/src/test/java/Avanta/com/regNewPaymentUser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webAuto.ipr" afterPath="$PROJECT_DIR$/webAuto.ipr" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webAuto.iws" afterPath="$PROJECT_DIR$/webAuto.iws" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -14,6 +12,9 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="Commander">
     <leftPanel view="Project" />
@@ -174,8 +175,8 @@
       <file leaf-file-name="deletePaymentUser.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/Avanta/com/deletePaymentUser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+            <state relative-caret-position="136">
+              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding>
                 <element signature="e#2877#2878#0" expanded="true" />
                 <element signature="e#2906#2907#0" expanded="true" />
@@ -187,9 +188,12 @@
       <file leaf-file-name="regNewPaymentUser.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/Avanta/com/regNewPaymentUser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="102" column="35" lean-forward="true" selection-start-line="102" selection-start-column="35" selection-end-line="102" selection-end-column="35" />
-              <folding />
+            <state relative-caret-position="306">
+              <caret line="96" column="8" lean-forward="true" selection-start-line="96" selection-start-column="8" selection-end-line="96" selection-end-column="8" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#884#900#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -197,8 +201,8 @@
       <file leaf-file-name="loginTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/Avanta/com/loginTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="49" column="78" lean-forward="true" selection-start-line="39" selection-start-column="7" selection-end-line="49" selection-end-column="78" />
+            <state relative-caret-position="578">
+              <caret line="49" column="78" lean-forward="false" selection-start-line="39" selection-start-column="7" selection-end-line="49" selection-end-column="78" />
               <folding>
                 <element signature="e#2318#2319#0" expanded="true" />
                 <element signature="e#2347#2348#0" expanded="true" />
@@ -210,7 +214,7 @@
       <file leaf-file-name="PassYopmail.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/Avanta/com/PassYopmail.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
+            <state relative-caret-position="612">
               <caret line="45" column="149" lean-forward="false" selection-start-line="45" selection-start-column="149" selection-end-line="45" selection-end-column="149" />
               <folding />
             </state>
@@ -333,7 +337,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -371,9 +374,10 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="AndroidView" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="ProjectViewSettings">
@@ -662,18 +666,19 @@
       <option name="project" value="LOCAL" />
       <updated>1575834707966</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="23.12.19 home part">
+      <created>1577131789751</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1577131789767</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TestHistory">
     <history-entry file="regNewPaymentUser - 2019.12.23 at 22h 56m 22s.xml">
       <configuration name="regNewPaymentUser" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="regNewPaymentUser_createNewUserForPayment - 2019.12.23 at 22h 14m 20s.xml">
-      <configuration name="regNewPaymentUser.createNewUserForPayment" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="regNewPaymentUser_createNewUserForPayment - 2019.12.23 at 22h 17m 29s.xml">
-      <configuration name="regNewPaymentUser.createNewUserForPayment" configurationId="JUnit" />
     </history-entry>
     <history-entry file="regNewPaymentUser_createNewUserForPayment - 2019.12.23 at 22h 19m 00s.xml">
       <configuration name="regNewPaymentUser.createNewUserForPayment" configurationId="JUnit" />
@@ -696,6 +701,12 @@
     <history-entry file="regNewPaymentUser_createNewUserForPayment - 2019.12.23 at 23h 08m 43s.xml">
       <configuration name="regNewPaymentUser.createNewUserForPayment" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="regNewPaymentUser_createNewUserForPayment - 2019.12.23 at 23h 10m 37s.xml">
+      <configuration name="regNewPaymentUser.createNewUserForPayment" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="regNewPaymentUser_createNewUserForPayment - 2019.12.23 at 23h 11m 55s.xml">
+      <configuration name="regNewPaymentUser.createNewUserForPayment" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -712,7 +723,6 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.49092284" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -723,7 +733,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2944079" sideWeight="0.48789713" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23676248" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24054463" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -736,6 +746,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette " active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Aspects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -875,6 +886,47 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/test/java/Avanta/com/deletePaymentUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding>
+            <element signature="e#2877#2878#0" expanded="true" />
+            <element signature="e#2906#2907#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/Avanta/com/loginTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="49" column="78" lean-forward="true" selection-start-line="39" selection-start-column="7" selection-end-line="49" selection-end-column="78" />
+          <folding>
+            <element signature="e#2318#2319#0" expanded="true" />
+            <element signature="e#2347#2348#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/Avanta/com/PassYopmail.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="45" column="149" lean-forward="false" selection-start-line="45" selection-start-column="149" selection-end-line="45" selection-end-column="149" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/Avanta/com/regNewPaymentUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="48" lean-forward="false" selection-start-line="11" selection-start-column="48" selection-end-line="11" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#884#900#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/Avanta/com/deletePaymentUser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1058,7 +1110,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/Avanta/com/PassYopmail.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
+        <state relative-caret-position="612">
           <caret line="45" column="149" lean-forward="false" selection-start-line="45" selection-start-column="149" selection-end-line="45" selection-end-column="149" />
           <folding />
         </state>
@@ -1068,7 +1120,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="83" column="0" lean-forward="false" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1082,8 +1133,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/Avanta/com/loginTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="49" column="78" lean-forward="true" selection-start-line="39" selection-start-column="7" selection-end-line="49" selection-end-column="78" />
+        <state relative-caret-position="578">
+          <caret line="49" column="78" lean-forward="false" selection-start-line="39" selection-start-column="7" selection-end-line="49" selection-end-column="78" />
           <folding>
             <element signature="e#2318#2319#0" expanded="true" />
             <element signature="e#2347#2348#0" expanded="true" />
@@ -1093,8 +1144,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/Avanta/com/deletePaymentUser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        <state relative-caret-position="136">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding>
             <element signature="e#2877#2878#0" expanded="true" />
             <element signature="e#2906#2907#0" expanded="true" />
@@ -1104,9 +1155,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/Avanta/com/regNewPaymentUser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="102" column="35" lean-forward="true" selection-start-line="102" selection-start-column="35" selection-end-line="102" selection-end-column="35" />
-          <folding />
+        <state relative-caret-position="306">
+          <caret line="96" column="8" lean-forward="true" selection-start-line="96" selection-start-column="8" selection-end-line="96" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#884#900#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

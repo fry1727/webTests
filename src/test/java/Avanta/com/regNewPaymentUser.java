@@ -1,17 +1,16 @@
 package Avanta.com;
 
+import org.jcp.xml.dsig.internal.dom.Utils;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.LocalFileDetector;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
+import  org.openqa.selenium.remote.LocalFileDetector;
+import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -95,8 +94,19 @@ public class regNewPaymentUser {
 //
         //photoUpload
 
+        
+
+
+            driver.setFileDetector(new LocalFileDetector());
+            File file = new File(System.getProperty("user.dir") + "/src/recources/" + "IMG_0263.JPG");
+            Utils.Log("file exists: " + file.exists());
+
+            String imagePath = file.getAbsolutePath();
+            WebElement input = driver.findElement(By.name("file"));
+            input.sendKeys(imagePath);
+
         new WebDriverWait(driver,10).until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='PhotoBox__container___axuMm PhotoBox__empty___3Po31']")));
-        driver.findElement(By.xpath("//input[@class='display_none']")).sendKeys("src/recources/IMG_0263.JPG");
+        driver.findElement(By.xpath("//input[@class='display_none']")).sendKeys("/src/recources/IMG_0263.JPG");
 
         //}
         //@After
