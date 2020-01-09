@@ -56,15 +56,24 @@ public class buySubs {
             driver.findElement(By.cssSelector("button[class*='Button']")).click();
             new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.className("text-title-medium")));
             assertThat(driver.findElement(By.className("text-title-medium")).getText(), is("People Nearby"));
+
+            //переход в active subscription
             driver.findElement(By.xpath("//div[@class='HeaderIconComponent__icon_wrapper___3ZHUA']")).click();
             new WebDriverWait(driver, 5).until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'Activate Subscription')]")));
             driver.findElement(By.xpath("//span[contains(text(),'Activate Subscription')]")).click();
-
             TimeUnit.SECONDS.sleep(1);
             new WebDriverWait(driver, 5).until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'Buy Subscription')]")));
+
+            //поле ввода данных карты
             driver.findElement(By.xpath("//span[contains(text(),'Buy Subscription')]")).click();
             new WebDriverWait(driver, 5).until(ExpectedConditions.elementToBeClickable(By.id("card_num")));
-            driver.findElement(By.id("card_num")).sendKeys("4242424242424242");
+            driver.findElement(By.xpath("//div[@id='card_num']//input[@class='__PrivateStripeElement-input']")).sendKeys("4242");
+            TimeUnit.SECONDS.sleep(1);
+            driver.findElement(By.xpath("//div[@id='card_num']//input[@class='__PrivateStripeElement-input']")).sendKeys("4242");
+            TimeUnit.SECONDS.sleep(1);
+            driver.findElement(By.xpath("//div[@id='card_num']//input[@class='__PrivateStripeElement-input']")).sendKeys("4242");
+            TimeUnit.SECONDS.sleep(1);
+            driver.findElement(By.xpath("//div[@id='card_num']//input[@class='__PrivateStripeElement-input']")).sendKeys("4242");
 
 
         }
