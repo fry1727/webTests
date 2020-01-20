@@ -58,6 +58,7 @@ public class buySubs {
             assertThat(driver.findElement(By.className("text-title-medium")).getText(), is("People Nearby"));
 
             //переход в active subscription
+            TimeUnit.SECONDS.sleep(1);
             driver.findElement(By.xpath("//div[@class='HeaderIconComponent__icon_wrapper___3ZHUA']")).click();
             new WebDriverWait(driver, 5).until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'Activate Subscription')]")));
             driver.findElement(By.xpath("//span[contains(text(),'Activate Subscription')]")).click();
@@ -66,14 +67,42 @@ public class buySubs {
 
             //поле ввода данных карты
             driver.findElement(By.xpath("//span[contains(text(),'Buy Subscription')]")).click();
+            TimeUnit.SECONDS.sleep(1);
             new WebDriverWait(driver, 5).until(ExpectedConditions.elementToBeClickable(By.id("card_num")));
-            driver.findElement(By.xpath("//div[@id='card_num']//input[@class='__PrivateStripeElement-input']")).sendKeys("4242");
+            driver.findElement(By.name("cardnumber")).click();
+            driver.findElement(By.xpath("//div[@id='card_num']//input[@class='__PrivateStripeElement-input']")).sendKeys("4");
+            driver.findElement(By.xpath("//div[@id='card_num']//input[@class='__PrivateStripeElement-input']")).sendKeys("2");
+            driver.findElement(By.xpath("//div[@id='card_num']//input[@class='__PrivateStripeElement-input']")).sendKeys("4");
+            driver.findElement(By.xpath("//div[@id='card_num']//input[@class='__PrivateStripeElement-input']")).sendKeys("2");
             TimeUnit.SECONDS.sleep(1);
-            driver.findElement(By.xpath("//div[@id='card_num']//input[@class='__PrivateStripeElement-input']")).sendKeys("4242");
+            driver.findElement(By.xpath("//div[@id='card_num']//input[@class='__PrivateStripeElement-input']")).sendKeys("4");
             TimeUnit.SECONDS.sleep(1);
-            driver.findElement(By.xpath("//div[@id='card_num']//input[@class='__PrivateStripeElement-input']")).sendKeys("4242");
+            driver.findElement(By.xpath("//div[@id='card_num']//input[@class='__PrivateStripeElement-input']")).sendKeys("2");
             TimeUnit.SECONDS.sleep(1);
-            driver.findElement(By.xpath("//div[@id='card_num']//input[@class='__PrivateStripeElement-input']")).sendKeys("4242");
+            driver.findElement(By.xpath("//div[@id='card_num']//input[@class='__PrivateStripeElement-input']")).sendKeys("4");
+            TimeUnit.SECONDS.sleep(1);
+            driver.findElement(By.xpath("//div[@id='card_num']//input[@class='__PrivateStripeElement-input']")).sendKeys("2");
+            TimeUnit.SECONDS.sleep(1);
+
+            driver.findElement(By.xpath("//div[@id='card_num']//input[@class='__PrivateStripeElement-input']")).sendKeys("4");
+            TimeUnit.SECONDS.sleep(1);
+            driver.findElement(By.xpath("//div[@id='card_num']//input[@class='__PrivateStripeElement-input']")).sendKeys("2");
+            TimeUnit.SECONDS.sleep(1);
+            driver.findElement(By.xpath("//div[@id='card_num']//input[@class='__PrivateStripeElement-input']")).sendKeys("4");
+            TimeUnit.SECONDS.sleep(1);
+            driver.findElement(By.xpath("//div[@id='card_num']//input[@class='__PrivateStripeElement-input']")).sendKeys("2");
+            TimeUnit.SECONDS.sleep(1);
+            driver.findElement(By.xpath("//div[@id='card_num']//input[@class='__PrivateStripeElement-input']")).sendKeys("4");
+            TimeUnit.SECONDS.sleep(1);
+            driver.findElement(By.xpath("//div[@id='card_num']//input[@class='__PrivateStripeElement-input']")).sendKeys("2");
+            TimeUnit.SECONDS.sleep(1);
+            driver.findElement(By.xpath("//div[@id='card_num']//input[@class='__PrivateStripeElement-input']")).sendKeys("4");
+            TimeUnit.SECONDS.sleep(1);
+            driver.findElement(By.xpath("//div[@id='card_num']//input[@class='__PrivateStripeElement-input']")).sendKeys("2");
+            TimeUnit.SECONDS.sleep(1);
+
+
+            TimeUnit.SECONDS.sleep(1);
 
 
         }
