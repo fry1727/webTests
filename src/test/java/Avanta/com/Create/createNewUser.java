@@ -12,7 +12,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.awt.*;
-import java.awt.event.KeyEvent;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -67,7 +66,7 @@ public class createNewUser {
         driver.findElement(By.name("password")).sendKeys("111111");
         driver.findElement(By.cssSelector("button[class*='Button']")).click();
 //
-        //заполнение describe yourself
+/*        //заполнение describe yourself
         new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id='intent']//li[1]")));
         assertThat(driver.findElement(By.xpath("//h1[@class='header-title text-title-medium text-center']")).getText(), is("Tap the Options" + "\n" + "to Describe Yourself"));
         assertThat(driver.findElement(By.xpath("//div[@id='intent']//h2[@class='text-title-regular mb-1 pr-12']")).getText(), is("Looking for"));
@@ -77,7 +76,6 @@ public class createNewUser {
         assertThat(driver.findElement(By.xpath("//div[@id='intent']//li[4]//div[1]")).getText(), is("New friends"));
         assertThat(driver.findElement(By.xpath("//div[@id='intent']//li[5]//div[1]")).getText(), is("Date"));
         driver.findElement(By.xpath("//div[@id='intent']//li[1]")).click();
-        //(driver.findElement(By.xpath("//div[@id='intent']//li[@class='ToggledList__list_item___1I-8Y ToggledList__active___3FMdM item-with-line']//div[@class='PortayYourselfControl__question_list_item___1SJIM color-grey-700 text-body-regular pr-12']")).;
         new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id='relationshipStatus']//li[1]")));
         assertThat(driver.findElement(By.xpath("//div[@id='relationshipStatus']//h2[@class='text-title-regular mb-1 pr-12']")).getText(), is("Relationship History"));
         assertThat(driver.findElement(By.xpath("//div[@id='relationshipStatus']//li[1]//div[1]")).getText(), is("Never married"));
@@ -86,6 +84,7 @@ public class createNewUser {
         assertThat(driver.findElement(By.xpath("//div[@id='relationshipStatus']//li[4]//div[1]")).getText(), is("Widowed"));
         driver.findElement(By.xpath("//div[@id='relationshipStatus']//li[1]")).click();
         TimeUnit.SECONDS.sleep(1);
+        Assert.assertNotNull(driver.findElement(By.xpath("//div[@id='intent']//div[@class='QuestionListItem__checked___1PvZz mr-4']")).isDisplayed());
         new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id='kidsAtHome']//li[1]")));
         assertThat(driver.findElement(By.xpath("//div[@id='kidsAtHome']//h2[@class='text-title-regular mb-1 pr-12']")).getText(), is("Do You Have Kids?"));
         assertThat(driver.findElement(By.xpath("//div[@id='kidsAtHome']//li[1]//div[1]")).getText(), is("No"));
@@ -93,6 +92,7 @@ public class createNewUser {
         assertThat(driver.findElement(By.xpath("//div[@id='kidsAtHome']//li[3]//div[1]")).getText(), is("Yes, but they don't live with me"));
         driver.findElement(By.xpath("//div[@id='kidsAtHome']//li[1]")).click();
         TimeUnit.SECONDS.sleep(1);
+        Assert.assertNotNull(driver.findElement(By.xpath("//div[@id='kidsAtHome']//div[@class='QuestionListItem__checked___1PvZz mr-4']")).isDisplayed());
         new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id='wantsKids']//li[1]")));
         assertThat(driver.findElement(By.xpath("//div[@id='wantsKids']//h2[@class='text-title-regular mb-1 pr-12']")).getText(), is("Do You Want Children?"));
         assertThat(driver.findElement(By.xpath("//div[@id='wantsKids']//li[1]//div[1]")).getText(), is("No"));
@@ -101,6 +101,7 @@ public class createNewUser {
         assertThat(driver.findElement(By.xpath("//div[@id='wantsKids']//li[4]//div[1]")).getText(), is("No, but my partner can have them"));
         driver.findElement(By.xpath("//div[@id='wantsKids']//li[1]")).click();
         TimeUnit.SECONDS.sleep(1);
+        Assert.assertNotNull(driver.findElement(By.xpath("//div[@id='wantsKids']//div[@class='QuestionListItem__checked___1PvZz mr-4']")).isDisplayed());
         new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id='ethnicity']//li[1]")));
         assertThat(driver.findElement(By.xpath("//div[@id='ethnicity']//h2[@class='text-title-regular mb-1 pr-12']")).getText(), is("Ethnicity"));
         assertThat(driver.findElement(By.xpath("//div[@id='ethnicity']//li[1]//div[1]")).getText(), is("White / Caucasian"));
@@ -113,6 +114,7 @@ public class createNewUser {
         assertThat(driver.findElement(By.xpath("//div[@id='ethnicity']//li[8]//div[1]")).getText(), is("Mixed / Other"));
         driver.findElement(By.xpath("//div[@id='ethnicity']//li[1]")).click();
         TimeUnit.SECONDS.sleep(1);
+        Assert.assertNotNull(driver.findElement(By.xpath("//div[@id='ethnicity']//div[@class='QuestionListItem__checked___1PvZz mr-4']")).isDisplayed());
         new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id='religion']//li[1]")));
         assertThat(driver.findElement(By.xpath("//div[@id='religion']//h2[@class='text-title-regular mb-1 pr-12']")).getText(), is("Religion"));
         assertThat(driver.findElement(By.xpath("//div[@id='religion']//li[1]//div[1]")).getText(), is("Agnostic"));
@@ -129,6 +131,7 @@ public class createNewUser {
         assertThat(driver.findElement(By.xpath("//div[@id='religion']//li[12]//div[1]")).getText(), is("Other"));
         driver.findElement(By.xpath("//div[@id='religion']//li[1]")).click();
         TimeUnit.SECONDS.sleep(1);
+        Assert.assertNotNull(driver.findElement(By.xpath("//div[@id='religion']//div[@class='QuestionListItem__checked___1PvZz mr-4']")).isDisplayed());
         new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id='education']//li[1]")));
         assertThat(driver.findElement(By.xpath("//div[@id='education']//h2[@class='text-title-regular mb-1 pr-12']")).getText(), is("Education"));
         assertThat(driver.findElement(By.xpath("//div[@id='education']//li[1]//div[1]")).getText(), is("No Degree"));
@@ -138,6 +141,7 @@ public class createNewUser {
         assertThat(driver.findElement(By.xpath("//div[@id='education']//li[5]//div[1]")).getText(), is("Master's / Doctorate"));
         driver.findElement(By.xpath("//div[@id='education']//li[1]")).click();
         TimeUnit.SECONDS.sleep(1);
+        Assert.assertNotNull(driver.findElement(By.xpath("//div[@id='education']//div[@class='QuestionListItem__checked___1PvZz mr-4']")).isDisplayed());
         new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id='bodyType']//li[1]")));
         assertThat(driver.findElement(By.xpath("//div[@id='bodyType']//h2[@class='text-title-regular mb-1 pr-12']")).getText(), is("Body type"));
         assertThat(driver.findElement(By.xpath("//div[@id='bodyType']//li[1]//div[1]")).getText(), is("Average"));
@@ -147,6 +151,7 @@ public class createNewUser {
         assertThat(driver.findElement(By.xpath("//div[@id='bodyType']//li[5]//div[1]")).getText(), is("A Few Extra Pounds"));
         driver.findElement(By.xpath("//div[@id='bodyType']//li[1]")).click();
         TimeUnit.SECONDS.sleep(1);
+        Assert.assertNotNull(driver.findElement(By.xpath("//div[@id='bodyType']//div[@class='QuestionListItem__checked___1PvZz mr-4']")).isDisplayed());
         new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id='smokes']//li[1]")));
         assertThat(driver.findElement(By.xpath("//div[@id='smokes']//h2[@class='text-title-regular mb-1 pr-12']")).getText(), is("Smoking"));
         assertThat(driver.findElement(By.xpath("//div[@id='smokes']//li[1]//div[1]")).getText(), is("No"));
@@ -154,12 +159,15 @@ public class createNewUser {
         assertThat(driver.findElement(By.xpath("//div[@id='smokes']//li[3]//div[1]")).getText(), is("Yes, regularly"));
         driver.findElement(By.xpath("//div[@id='smokes']//li[1]")).click();
         TimeUnit.SECONDS.sleep(1);
+        Assert.assertNotNull(driver.findElement(By.xpath("//div[@id='smokes']//div[@class='QuestionListItem__checked___1PvZz mr-4']")).isDisplayed());
         new WebDriverWait(driver, 5).until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id='drinks']//li[1]")));
         assertThat(driver.findElement(By.xpath("//div[@id='drinks']//h2[@class='text-title-regular mb-1 pr-12']")).getText(), is("Drinking"));
         assertThat(driver.findElement(By.xpath("//div[@id='drinks']//li[1]//div[1]")).getText(), is("No"));
         assertThat(driver.findElement(By.xpath("//div[@id='drinks']//li[2]//div[1]")).getText(), is("Yes, socially"));
         assertThat(driver.findElement(By.xpath("//div[@id='drinks']//li[3]//div[1]")).getText(), is("Yes, regularly"));
         driver.findElement(By.xpath("//div[@id='drinks']//li[1]")).click();
+        TimeUnit.SECONDS.sleep(1);
+        Assert.assertNotNull(driver.findElement(By.xpath("//div[@id='drinks']//div[@class='QuestionListItem__checked___1PvZz mr-4']")).isDisplayed());
         assertThat(driver.findElement(By.xpath("//h2[@class='text-title-regular mb-1']")).getText(), is("Height"));
         assertThat(driver.findElement(By.xpath("//p[@class='mb-2 color-grey-700 text-body-regular']")).getText(), is("Slide to set the value"));
         assertThat(driver.findElement(By.xpath("//div[@class='text-small-caption-regular color-grey-500']")).getText(), is("Foot/Inch"));
@@ -173,19 +181,52 @@ public class createNewUser {
         robot.keyPress(KeyEvent.VK_RIGHT);
         driver.findElement(By.cssSelector(".text-small-caption-regular > span")).click();
         new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.cssSelector(".SaveContinueButton__footer_fixed___3D1EY .Button__button___2GX_6")));
-        driver.findElement(By.cssSelector(".SaveContinueButton__footer_fixed___3D1EY .Button__button___2GX_6")).click();
+        assertThat(driver.findElement(By.cssSelector(".SaveContinueButton__footer_fixed___3D1EY .Button__button___2GX_6")).getText(), is("Save & Continue"));
+        driver.findElement(By.cssSelector(".SaveContinueButton__footer_fixed___3D1EY .Button__button___2GX_6")).click();*/
 
 //
-//        //интересы
+/*//        //интересы
         new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.xpath("//p[contains(text(),'Computer Games')]")));
+        assertThat(driver.findElement(By.xpath("//h1[@class='header-title text-title-medium text-center']")).getText(), is("Pick Up at Least 5 Interests"));
+        assertThat(driver.findElement(By.xpath("//div[@class='InterestsControl__interest_list___1Qn4E']//div[1]//div[1]//div[1]")).getText(), is("CAMPING / HIKING"));
+        Assert.assertNotNull(driver.findElement(By.xpath("//div[@class='px-6 SaveContinueButton__registration_footer___AAeBO']")).isDisplayed());
         driver.findElement(By.xpath("//p[contains(text(),'Computer Games')]")).click();
         driver.findElement(By.xpath("//p[contains(text(),'Charity')]")).click();
         driver.findElement(By.xpath("//p[contains(text(),'Collecting')]")).click();
         driver.findElement(By.xpath("//p[contains(text(),'Cooking')]")).click();
         driver.findElement(By.xpath("//p[contains(text(),'Dance')]")).click();
+        TimeUnit.SECONDS.sleep(1);
+        Assert.assertNotNull(driver.findElement(By.xpath("//div[@class='px-6 SaveContinueButton__registration_footer___AAeBO SaveContinueButton__mirror___oUXrl']")).isDisplayed());
+        Assert.assertNotNull(driver.findElement(By.xpath("//div[@class='px-6 SaveContinueButton__registration_footer___AAeBO SaveContinueButton__footer_fixed___3D1EY']")).isDisplayed());
+        assertThat(driver.findElement(By.xpath("//div[@class='InterestsControl__interest_list___1Qn4E']//div[6]//div[1]//div[1]")).getText(), is("CRAFT MAKING"));
+        assertThat(driver.findElement(By.xpath("//div[@class='InterestsControl__interest_list___1Qn4E']//div[7]//div[1]//div[1]")).getText(), is("CYCLING"));
+        assertThat(driver.findElement(By.xpath("//div[@class='InterestsControl__interest_list___1Qn4E']//div[9]//div[1]//div[1]")).getText(), is("DRAWING / PAINTING"));
+        assertThat(driver.findElement(By.xpath("//div[@class='InterestsControl__interest_list___1Qn4E']//div[10]//div[1]//div[1]")).getText(), is("FITNESS / GYM"));
+        assertThat(driver.findElement(By.xpath("//div[@class='InterestsControl__interest_list___1Qn4E']//div[11]//div[1]//div[1]")).getText(), is("GARDENING"));
+        assertThat(driver.findElement(By.xpath("//div[@class='InterestsControl__interest_list___1Qn4E']//div[12]//div[1]//div[1]")).getText(), is("INTERNET BROWSING"));
+        assertThat(driver.findElement(By.xpath("//div[@class='InterestsControl__interest_list___1Qn4E']//div[13]//div[1]//div[1]")).getText(), is("MUSIC"));
+        assertThat(driver.findElement(By.xpath("//div[@class='InterestsControl__interest_list___1Qn4E']//div[14]//div[1]//div[1]")).getText(), is("OUTDOOR HOBBIES"));
+        assertThat(driver.findElement(By.xpath("//div[@class='InterestsControl__interest_list___1Qn4E']//div[15]//div[1]//div[1]")).getText(), is("PETS"));
+        assertThat(driver.findElement(By.xpath("//div[@class='InterestsControl__interest_list___1Qn4E']//div[16]//div[1]//div[1]")).getText(), is("PHOTOGRAPHY"));
+        assertThat(driver.findElement(By.xpath("//div[@class='InterestsControl__interest_list___1Qn4E']//div[17]//div[1]//div[1]")).getText(), is("PLAY SPORT GAMES"));
+        assertThat(driver.findElement(By.xpath("//div[@class='InterestsControl__interest_list___1Qn4E']//div[18]//div[1]//div[1]")).getText(), is("PLAYING CARDS"));
+        assertThat(driver.findElement(By.xpath("//div[@class='InterestsControl__interest_list___1Qn4E']//div[19]//div[1]//div[1]")).getText(), is("READING"));
+        assertThat(driver.findElement(By.xpath("//div[@class='InterestsControl__interest_list___1Qn4E']//div[20]//div[1]//div[1]")).getText(), is("RUNNING / JOGGING"));
+        assertThat(driver.findElement(By.xpath("//div[@class='InterestsControl__interest_list___1Qn4E']//div[21]//div[1]//div[1]")).getText(), is("SHOPPING"));
+        assertThat(driver.findElement(By.xpath("//div[@class='InterestsControl__interest_list___1Qn4E']//div[22]//div[1]//div[1]")).getText(), is("SINGING"));
+        assertThat(driver.findElement(By.xpath("//div[@class='InterestsControl__interest_list___1Qn4E']//div[23]//div[1]//div[1]")).getText(), is("SOCIAL NETWORKING"));
+        assertThat(driver.findElement(By.xpath("//div[@class='InterestsControl__interest_list___1Qn4E']//div[24]//div[1]//div[1]")).getText(), is("SPIRITUALITY"));
+        assertThat(driver.findElement(By.xpath("//div[@class='InterestsControl__interest_list___1Qn4E']//div[25]//div[1]//div[1]")).getText(), is("SWIMMING"));
+        assertThat(driver.findElement(By.xpath("//div[@class='InterestsControl__interest_list___1Qn4E']//div[26]//div[1]//div[1]")).getText(), is("TRAVELING"));
+        assertThat(driver.findElement(By.xpath("//div[@class='InterestsControl__interest_list___1Qn4E']//div[27]//div[1]//div[1]")).getText(), is("WALKING"));
+        assertThat(driver.findElement(By.xpath("//div[@class='InterestsControl__interest_list___1Qn4E']//div[28]//div[1]//div[1]")).getText(), is("WATCHING MOVIES"));
+        assertThat(driver.findElement(By.xpath("//div[@class='InterestsControl__interest_list___1Qn4E']//div[29]//div[1]//div[1]")).getText(), is("WATCHING SPORTS"));
+        assertThat(driver.findElement(By.xpath("//div[@class='InterestsControl__interest_list___1Qn4E']//div[30]//div[1]//div[1]")).getText(), is("WATCHING TV"));
+        assertThat(driver.findElement(By.cssSelector(".SaveContinueButton__footer_fixed___3D1EY .Button__button___2GX_6")).getText(), is("Save & Continue"));
+
         new WebDriverWait(driver, 5).until(ExpectedConditions.elementToBeClickable(By.cssSelector(".SaveContinueButton__footer_fixed___3D1EY .Button__button___2GX_6")));
         driver.findElement(By.cssSelector(".SaveContinueButton__footer_fixed___3D1EY .Button__button___2GX_6")).click();
-//
+//*/
         //photoUpload
 
 
