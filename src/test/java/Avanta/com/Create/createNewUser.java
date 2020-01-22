@@ -1,6 +1,7 @@
 package Avanta.com.Create;
 
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -12,8 +13,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -39,11 +42,11 @@ public class createNewUser {
     public void create() throws AWTException, InterruptedException {
 
 
-
-/*        //Регистрация начало
+        //Регистрация начало
         driver.get("https://m.meetville.com/__registration");
         new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.name("firstName")));
         driver.findElement(By.name("firstName")).click();     //ввод имени
+        driver.findElement(By.name("firstName")).clear();
         String userName = "Jonathan";
         driver.findElement(By.name("firstName")).sendKeys(userName);
         driver.findElement(By.name("email")).click();    // ввод email
@@ -52,8 +55,8 @@ public class createNewUser {
         int randomCount = random.nextInt(1000000);
         String newUser = "test.atest" + randomCount  + "@yopmail.com";
         driver.findElement(By.name("email")).sendKeys(newUser);
-        driver.findElement(By.id("fast_registration_submit")).click();*/
-
+        driver.findElement(By.id("fast_registration_submit")).click();
+/*
         driver.get("https://m.meetville.com/");
         new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.cssSelector(".px-3 > svg")));
         driver.findElement(By.cssSelector(".px-3 > svg")).click();
@@ -64,9 +67,9 @@ public class createNewUser {
         driver.findElement(By.name("email")).sendKeys("test.atest355199@yopmail.com");
         driver.findElement(By.name("password")).click();
         driver.findElement(By.name("password")).sendKeys("111111");
-        driver.findElement(By.cssSelector("button[class*='Button']")).click();
-//
-/*        //заполнение describe yourself
+        driver.findElement(By.cssSelector("button[class*='Button']")).click();*/
+
+        //заполнение describe yourself
         new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id='intent']//li[1]")));
         assertThat(driver.findElement(By.xpath("//h1[@class='header-title text-title-medium text-center']")).getText(), is("Tap the Options" + "\n" + "to Describe Yourself"));
         assertThat(driver.findElement(By.xpath("//div[@id='intent']//h2[@class='text-title-regular mb-1 pr-12']")).getText(), is("Looking for"));
@@ -172,7 +175,6 @@ public class createNewUser {
         assertThat(driver.findElement(By.xpath("//p[@class='mb-2 color-grey-700 text-body-regular']")).getText(), is("Slide to set the value"));
         assertThat(driver.findElement(By.xpath("//div[@class='text-small-caption-regular color-grey-500']")).getText(), is("Foot/Inch"));
         assertThat(driver.findElement(By.xpath("//div[@class='text-small-caption-regular color-grey-500']")).getText(), is("Foot/Inch"));
-
         driver.findElement(By.cssSelector(".RulerScale__inner___2QpaF > svg")).click();
         driver.findElement(By.cssSelector(".text-small-caption-regular > span")).click();
         driver.findElement(By.cssSelector(".RulerScale__inner___2QpaF")).click();
@@ -181,11 +183,10 @@ public class createNewUser {
         robot.keyPress(KeyEvent.VK_RIGHT);
         driver.findElement(By.cssSelector(".text-small-caption-regular > span")).click();
         new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.cssSelector(".SaveContinueButton__footer_fixed___3D1EY .Button__button___2GX_6")));
-        assertThat(driver.findElement(By.cssSelector(".SaveContinueButton__footer_fixed___3D1EY .Button__button___2GX_6")).getText(), is("Save & Continue"));
-        driver.findElement(By.cssSelector(".SaveContinueButton__footer_fixed___3D1EY .Button__button___2GX_6")).click();*/
+        assertThat(driver.findElement(By.cssSelector(".SaveContinueButton__footer_fixed___3D1EY .Button__button___2GX_6")).getText(), is("SAVE & CONTINUE"));
+        driver.findElement(By.cssSelector(".SaveContinueButton__footer_fixed___3D1EY .Button__button___2GX_6")).click();
 
-//
-/*//        //интересы
+        //интересы
         new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.xpath("//p[contains(text(),'Computer Games')]")));
         assertThat(driver.findElement(By.xpath("//h1[@class='header-title text-title-medium text-center']")).getText(), is("Pick Up at Least 5 Interests"));
         assertThat(driver.findElement(By.xpath("//div[@class='InterestsControl__interest_list___1Qn4E']//div[1]//div[1]//div[1]")).getText(), is("CAMPING / HIKING"));
@@ -222,17 +223,19 @@ public class createNewUser {
         assertThat(driver.findElement(By.xpath("//div[@class='InterestsControl__interest_list___1Qn4E']//div[28]//div[1]//div[1]")).getText(), is("WATCHING MOVIES"));
         assertThat(driver.findElement(By.xpath("//div[@class='InterestsControl__interest_list___1Qn4E']//div[29]//div[1]//div[1]")).getText(), is("WATCHING SPORTS"));
         assertThat(driver.findElement(By.xpath("//div[@class='InterestsControl__interest_list___1Qn4E']//div[30]//div[1]//div[1]")).getText(), is("WATCHING TV"));
-        assertThat(driver.findElement(By.cssSelector(".SaveContinueButton__footer_fixed___3D1EY .Button__button___2GX_6")).getText(), is("Save & Continue"));
-
+        assertThat(driver.findElement(By.cssSelector(".SaveContinueButton__footer_fixed___3D1EY .Button__button___2GX_6")).getText(), is("SAVE & CONTINUE"));
         new WebDriverWait(driver, 5).until(ExpectedConditions.elementToBeClickable(By.cssSelector(".SaveContinueButton__footer_fixed___3D1EY .Button__button___2GX_6")));
         driver.findElement(By.cssSelector(".SaveContinueButton__footer_fixed___3D1EY .Button__button___2GX_6")).click();
-//*/
+
         //photoUpload
 
-
         new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='PhotoBox__container___axuMm PhotoBox__empty___3Po31']")));
+        assertThat(driver.findElement(By.xpath("//h1[@class='UploadPhotoPage__title___IEtVl text-title-medium']")).getText(), is("Upload Your Photos"));
+        assertThat(driver.findElement(By.xpath("//div[@class='UploadPhotoPage__text_block___1q0zt']")).getText(), is("To attract more attention, please upload a clear photo of your face. Photos that do not meet our requirements will be deleted."));
+        assertThat(driver.findElement(By.xpath("//button[@class='Button__button___2GX_6 Button__blue___1PGNk text-button color-white']")).getText(), is("Add Photos"));
         driver.findElement(By.xpath("//input[@class='display_none']")).sendKeys("C:\\maven\\webTests\\src\\recources\\IMG_0030.JPG");
         new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='Button__button___2GX_6 Button__blue___1PGNk text-button color-white']")));
+        assertThat(driver.findElement(By.xpath("//button[@class='Button__button___2GX_6 Button__blue___1PGNk text-button color-white']")).getText(), is("SAVE & CONTINUE"));
         driver.findElement(By.xpath("//button[@class='Button__button___2GX_6 Button__blue___1PGNk text-button color-white']")).click();
         TimeUnit.SECONDS.sleep(10);  //ожидание загрузки фото
 
