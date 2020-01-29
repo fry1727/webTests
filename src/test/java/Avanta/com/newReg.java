@@ -1,6 +1,5 @@
 package Avanta.com;
 
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -14,6 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.awt.*;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 
 public class newReg {
     private WebDriver driver;
@@ -42,14 +42,27 @@ public class newReg {
 
         new WebDriverWait(driver, 5).until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//button[@class='Button__button___2GX_6 Button__blue___1PGNk text-button color-white']"))));
         driver.findElement(By.xpath("//input[@placeholder='Birthday']")).click();
+        new WebDriverWait(driver, 5).until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//span[contains(text(),'OK')]"))));
         driver.findElement(By.xpath("//span[contains(text(),'OK')]")).click();
-        
+        driver.findElement(By.xpath("//button[@class='Button__button___2GX_6 Button__blue___1PGNk text-button color-white']")).click();
+        new WebDriverWait(driver, 5).until(ExpectedConditions.elementToBeClickable(driver.findElement(By.name("name"))));
+        driver.findElement(By.name("name")).click();
+        driver.findElement(By.name("name")).sendKeys("Jonathan");
+        driver.findElement(By.xpath("//button[@class='Button__button___2GX_6 Button__blue___1PGNk text-button color-white']")).click();
+        new WebDriverWait(driver, 5).until(ExpectedConditions.elementToBeClickable(driver.findElement(By.name("email"))));
+        driver.findElement(By.name("email")).click();
+        Random random = new Random();
+        int randomCount = random.nextInt(1000000);
+        driver.findElement(By.name("email")).sendKeys("test.atest" + randomCount + "@yopmail.com");
+        //driver.findElement(By.xpath("//button[@class='Button__button___2GX_6 Button__blue___1PGNk text-button color-white']")).click();
+
+
     }
 
 
-    @After
+ /*   @After
     public void tearDown() {
 
         driver.quit();
-    }
+    }*/
 }
