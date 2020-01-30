@@ -17,7 +17,7 @@ import java.util.concurrent.TimeUnit;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
-public class buySubs {
+public class BuySubs {
     private WebDriver driver;
 
 

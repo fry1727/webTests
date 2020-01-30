@@ -1,5 +1,6 @@
 package Avanta.com.CRUD;
 
+import Avanta.com.Data;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -15,15 +16,15 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 
-public class create {
+public class Create {
 
     private WebDriver driver;
     private Map<String, Object> vars;
     JavascriptExecutor js;
+    Data data;
 
     @Before
     public void setUp() {
@@ -33,12 +34,15 @@ public class create {
         prefs.put("profile.default_content_setting_values.notifications", 2); //1-Allow, 2-Block, 0-default
         options.setExperimentalOption("prefs", prefs);
         driver = new ChromeDriver(options);
+        data = new Data();
+        data.setName("Jonathan");
+        data.setEmail("test.atestuser@yopmail.com");
     }
 
     @Test
     public void createSimpleUser() throws AWTException, InterruptedException {
 
-        //Регистрация начало
+        //===================================================Регистрация начало======================================================================================================
         driver.get("https://m.meetville.com/");
         new WebDriverWait(driver, 5).until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//button[@class='Button__button___2GX_6 Button__blue___1PGNk text-button color-white']"))));
         driver.findElement(By.xpath("//button[@class='Button__button___2GX_6 Button__blue___1PGNk text-button color-white']")).click();
@@ -47,18 +51,16 @@ public class create {
         new WebDriverWait(driver, 5).until(ExpectedConditions.elementToBeClickable(driver.findElement(By.xpath("//span[contains(text(),'OK')]"))));
         driver.findElement(By.xpath("//span[contains(text(),'OK')]")).click();
         driver.findElement(By.xpath("//button[@class='Button__button___2GX_6 Button__blue___1PGNk text-button color-white']")).click();
-        new WebDriverWait(driver, 5).until(ExpectedConditions.elementToBeClickable(driver.findElement(By.name("name"))));
+        new WebDriverWait(driver, 5).until(ExpectedConditions.elementToBeClickable(driver.findElement(By.name("name"))));   //ввод name
         driver.findElement(By.name("name")).click();
-        driver.findElement(By.name("name")).sendKeys("Jonathan");
+        driver.findElement(By.name("name")).sendKeys(data.getName());
         driver.findElement(By.xpath("//button[@class='Button__button___2GX_6 Button__blue___1PGNk text-button color-white']")).click();
-        new WebDriverWait(driver, 5).until(ExpectedConditions.elementToBeClickable(driver.findElement(By.name("email"))));
+        new WebDriverWait(driver, 5).until(ExpectedConditions.elementToBeClickable(driver.findElement(By.name("email"))));   //ввод email
         driver.findElement(By.name("email")).click();
-        Random random = new Random();
-        int randomCount = random.nextInt(1000000);
-        driver.findElement(By.name("email")).sendKeys("test.atest" + randomCount + "@yopmail.com");
+        driver.findElement(By.name("email")).sendKeys(data.getEmail());
         driver.findElement(By.xpath("//button[@class='Button__button___2GX_6 Button__blue___1PGNk text-button color-white']")).click();
 
-        //заполнение describe yourself
+        //==================================================заполнение describe yourself===========================================================================================
         new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id='intent']//li[1]")));
         driver.findElement(By.xpath("//div[@id='intent']//li[1]")).click();
         new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id='relationshipStatus']//li[1]")));
@@ -98,7 +100,7 @@ public class create {
         new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.cssSelector(".SaveContinueButton__footer_fixed___3D1EY .Button__button___2GX_6")));
         driver.findElement(By.cssSelector(".SaveContinueButton__footer_fixed___3D1EY .Button__button___2GX_6")).click();
 
-        //интересы
+        //===================================================заполнение интересов======================================================================================================
         new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.xpath("//p[contains(text(),'Computer Games')]")));
         driver.findElement(By.xpath("//p[contains(text(),'Computer Games')]")).click();
         driver.findElement(By.xpath("//p[contains(text(),'Charity')]")).click();
@@ -109,7 +111,7 @@ public class create {
         new WebDriverWait(driver, 5).until(ExpectedConditions.elementToBeClickable(By.cssSelector(".SaveContinueButton__footer_fixed___3D1EY .Button__button___2GX_6")));
         driver.findElement(By.cssSelector(".SaveContinueButton__footer_fixed___3D1EY .Button__button___2GX_6")).click();
 
-        //photoUpload
+        //====================================================шаг photoUpload==================================================================================================================
         new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='PhotoBox__container___axuMm PhotoBox__empty___3Po31']")));
         driver.findElement(By.xpath("//input[@class='display_none']")).sendKeys("C:\\maven\\webTests\\src\\recources\\IMG_0030.JPG");
         new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='Button__button___2GX_6 Button__blue___1PGNk text-button color-white']")));

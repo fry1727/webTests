@@ -15,7 +15,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
-public class newReg {
+public class NewReg {
     private WebDriver driver;
     private Map<String, Object> vars;
     JavascriptExecutor js;

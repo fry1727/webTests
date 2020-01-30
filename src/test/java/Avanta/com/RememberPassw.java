@@ -17,7 +17,7 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
 
-public class rememberPassw {
+public class RememberPassw {
 
     private WebDriver driver;
     private Map<String, Object> vars;

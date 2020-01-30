@@ -20,7 +20,7 @@ import java.util.concurrent.TimeUnit;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
-public class regNewPaymentUser {
+public class RegNewPaymentUser {
     private WebDriver driver;
     private Map<String, Object> vars;
     JavascriptExecutor js;
