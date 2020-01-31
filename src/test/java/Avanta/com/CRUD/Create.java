@@ -61,35 +61,37 @@ public class Create {
         driver.findElement(By.xpath("//button[@class='Button__button___2GX_6 Button__blue___1PGNk text-button color-white']")).click();
 
         //==================================================заполнение describe yourself===========================================================================================
+
         new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id='intent']//li[1]")));
-        driver.findElement(By.xpath("//div[@id='intent']//li[1]")).click();
+        driver.findElement(By.xpath("//div[@id='intent']//li[1]")).click();                                                                                                 //выбор Looking for: Chat
         new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id='relationshipStatus']//li[1]")));
-        driver.findElement(By.xpath("//div[@id='relationshipStatus']//li[1]")).click();
+        driver.findElement(By.xpath("//div[@id='relationshipStatus']//li[1]")).click();                                                                                     //выбор relationship: Separated
         TimeUnit.SECONDS.sleep(1);
         new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id='kidsAtHome']//li[1]")));
-        driver.findElement(By.xpath("//div[@id='kidsAtHome']//li[1]")).click();
+        driver.findElement(By.xpath("//div[@id='kidsAtHome']//li[1]")).click();                                                                                              //выбор Children: No
         TimeUnit.SECONDS.sleep(1);
         new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id='wantsKids']//li[1]")));
-        driver.findElement(By.xpath("//div[@id='wantsKids']//li[1]")).click();
+        driver.findElement(By.xpath("//div[@id='wantsKids']//li[1]")).click();                                                                                               //выбор wantsKids: No
         TimeUnit.SECONDS.sleep(1);
         new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id='ethnicity']//li[1]")));
-        driver.findElement(By.xpath("//div[@id='ethnicity']//li[1]")).click();
+        driver.findElement(By.xpath("//div[@id='ethnicity']//li[1]")).click();                                                                                                //выбор Ethnicity: White / Caucasian
         TimeUnit.SECONDS.sleep(1);
         new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id='religion']//li[1]")));
-        driver.findElement(By.xpath("//div[@id='religion']//li[1]")).click();
+        driver.findElement(By.xpath("//div[@id='religion']//li[1]")).click();                                                                                                  //выбор Religion: Agnostic
         TimeUnit.SECONDS.sleep(1);
         new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id='education']//li[1]")));
-        driver.findElement(By.xpath("//div[@id='education']//li[1]")).click();
+        driver.findElement(By.xpath("//div[@id='education']//li[1]")).click();                                                                                                  //выбор Education: No Degree
         TimeUnit.SECONDS.sleep(1);
         new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id='bodyType']//li[1]")));
-        driver.findElement(By.xpath("//div[@id='bodyType']//li[1]")).click();
+        driver.findElement(By.xpath("//div[@id='bodyType']//li[1]")).click();                                                                                                   //выбор BodyType: Average
         TimeUnit.SECONDS.sleep(1);
         new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id='smokes']//li[1]")));
-        driver.findElement(By.xpath("//div[@id='smokes']//li[1]")).click();
+        driver.findElement(By.xpath("//div[@id='smokes']//li[1]")).click();                                                                                                     //выбор Smoking: No
         TimeUnit.SECONDS.sleep(1);
         new WebDriverWait(driver, 5).until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id='drinks']//li[1]")));
-        driver.findElement(By.xpath("//div[@id='drinks']//li[1]")).click();
+        driver.findElement(By.xpath("//div[@id='drinks']//li[1]")).click();                                                                                                       //выбор Drinking: No
         TimeUnit.SECONDS.sleep(1);
+        //=============================================выбор роста==============================================================
         driver.findElement(By.cssSelector(".RulerScale__inner___2QpaF > svg")).click();
         driver.findElement(By.cssSelector(".text-small-caption-regular > span")).click();
         driver.findElement(By.cssSelector(".RulerScale__inner___2QpaF")).click();
@@ -101,22 +103,24 @@ public class Create {
         driver.findElement(By.cssSelector(".SaveContinueButton__footer_fixed___3D1EY .Button__button___2GX_6")).click();
 
         //===================================================заполнение интересов======================================================================================================
+
         new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.xpath("//p[contains(text(),'Computer Games')]")));
-        driver.findElement(By.xpath("//p[contains(text(),'Computer Games')]")).click();
-        driver.findElement(By.xpath("//p[contains(text(),'Charity')]")).click();
-        driver.findElement(By.xpath("//p[contains(text(),'Collecting')]")).click();
-        driver.findElement(By.xpath("//p[contains(text(),'Cooking')]")).click();
-        driver.findElement(By.xpath("//p[contains(text(),'Dance')]")).click();
+        driver.findElement(By.xpath("//p[contains(text(),'Computer Games')]")).click();                                                                                                  //выбор Computer Games
+        driver.findElement(By.xpath("//p[contains(text(),'Charity')]")).click();                                                                                                        //выбор Charity
+        driver.findElement(By.xpath("//p[contains(text(),'Collecting')]")).click();                                                                                                     //выбор Collecting
+        driver.findElement(By.xpath("//p[contains(text(),'Cooking')]")).click();                                                                                                        //выбор Cooking
+        driver.findElement(By.xpath("//p[contains(text(),'Dance')]")).click();                                                                                                          //выбор CDance
         TimeUnit.SECONDS.sleep(1);
         new WebDriverWait(driver, 5).until(ExpectedConditions.elementToBeClickable(By.cssSelector(".SaveContinueButton__footer_fixed___3D1EY .Button__button___2GX_6")));
         driver.findElement(By.cssSelector(".SaveContinueButton__footer_fixed___3D1EY .Button__button___2GX_6")).click();
 
         //====================================================шаг photoUpload==================================================================================================================
+
         new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='PhotoBox__container___axuMm PhotoBox__empty___3Po31']")));
         driver.findElement(By.xpath("//input[@class='display_none']")).sendKeys("C:\\maven\\webTests\\src\\recources\\IMG_0030.JPG");
         new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='Button__button___2GX_6 Button__blue___1PGNk text-button color-white']")));
         driver.findElement(By.xpath("//button[@class='Button__button___2GX_6 Button__blue___1PGNk text-button color-white']")).click();
-        TimeUnit.SECONDS.sleep(10);  //ожидание загрузки фото
+        TimeUnit.SECONDS.sleep(10);                                                                                                                                         //ожидание загрузки фото
 
 
     }
