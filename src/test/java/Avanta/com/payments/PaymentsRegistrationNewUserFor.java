@@ -1,10 +1,9 @@
-package Avanta.com;
+package Avanta.com.payments;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -20,10 +19,8 @@ import java.util.concurrent.TimeUnit;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
-public class RegNewPaymentUser {
+public class PaymentsRegistrationNewUserFor {
     private WebDriver driver;
-    private Map<String, Object> vars;
-    JavascriptExecutor js;
 
     @Before
     public void setUp() {

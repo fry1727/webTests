@@ -1,4 +1,4 @@
-package Avanta.com;
+package Avanta.com.payments;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -12,7 +12,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-public class PassYopmail {
+public class PaymentPasswordYopmail {
     private WebDriver driver;
     private Map<String, Object> vars;
     JavascriptExecutor js;
@@ -41,8 +41,6 @@ public class PassYopmail {
         driver.switchTo().defaultContent();
         driver.switchTo().frame(driver.findElement(By.id("ifmail")));
         new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//span[contains(text(),'Password:')]")));
-        //String a = driver.findElement(By.xpath("//span[contains(text(),'Password:')]")).getText();
-        //System.out.println(a);
         sPass = driver.findElement(By.xpath("/html[1]/body[1]/div[1]/div[3]/div[2]/div[1]/div[1]/table[1]/tbody[1]/tr[3]/td[1]/table[1]/tbody[1]/tr[1]/td[1]/table[1]/tbody[1]/tr[1]/td[1]/table[1]/tbody[1]/tr[6]/td[1]/span[1]")).getText();
         System.out.println(sPass);
 

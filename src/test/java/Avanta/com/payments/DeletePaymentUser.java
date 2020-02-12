@@ -1,4 +1,4 @@
-package Avanta.com;
+package Avanta.com.payments;
 
 import org.junit.After;
 import org.junit.Before;
@@ -21,10 +21,10 @@ public class DeletePaymentUser {
 
     @Before
     public void setUp() {
-        PassYopmail passYopmail = new PassYopmail();
-        passYopmail.setUp();
-        passYopmail.pasYopm();
-        passYopmail.tearDown();
+        PaymentPasswordYopmail paymentPasswordYopmail = new PaymentPasswordYopmail();
+        paymentPasswordYopmail.setUp();
+        paymentPasswordYopmail.pasYopm();
+        paymentPasswordYopmail.tearDown();
 
         System.setProperty("webdriver.chrome.driver", "src/recources/chromedriver.exe");
 
@@ -38,7 +38,7 @@ public class DeletePaymentUser {
 
     @Test
     public void deleteUser() {
-        if (PassYopmail.sPass != null) {
+        if (PaymentPasswordYopmail.sPass != null) {
 
             driver.get("https://m.meetville.com/");
             new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.cssSelector(".px-3 > svg")));
@@ -51,7 +51,7 @@ public class DeletePaymentUser {
             driver.findElement(By.name("password")).click();
 
 
-            driver.findElement(By.name("password")).sendKeys(PassYopmail.sPass);
+            driver.findElement(By.name("password")).sendKeys(PaymentPasswordYopmail.sPass);
             driver.findElement(By.cssSelector("button[class*='Button']")).click();
 
             driver.get("https://m.meetville.com/settings/accountSettings/changeEmail");
@@ -61,7 +61,7 @@ public class DeletePaymentUser {
             int randomCount = random.nextInt(1000000);
             driver.findElement(By.name("email")).sendKeys("test." + randomCount + "payment1727@yopmail.com");
             driver.findElement(By.name("password")).click();
-            driver.findElement(By.name("password")).sendKeys(PassYopmail.sPass);
+            driver.findElement(By.name("password")).sendKeys(PaymentPasswordYopmail.sPass);
             driver.findElement(By.cssSelector("button[class*='Button']")).click();
         }
     }
