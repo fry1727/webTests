@@ -65,9 +65,9 @@ public class PaymentsBuySubs {
             driver.findElement(By.xpath("//span[contains(text(),'Activate Subscription')]")).click();
             TimeUnit.SECONDS.sleep(1);
             new WebDriverWait(driver, 5).until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'Buy Subscription')]")));
+            driver.findElement(By.xpath("//span[contains(text(),'Buy Subscription')]")).click();
 
             //===================================================================поле ввода данных карты=================================================================================
-            driver.findElement(By.xpath("//span[contains(text(),'Buy Subscription')]")).click();
             TimeUnit.SECONDS.sleep(1);
             new WebDriverWait(driver, 5).until(ExpectedConditions.elementToBeClickable(By.id("card_num")));
             driver.findElement(By.xpath("//div[@id='card_num']//input[@class='__PrivateStripeElement-input']")).sendKeys("");

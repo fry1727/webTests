@@ -18,7 +18,7 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
 
-public class VisualLogin {
+public class VisualLogin_Test {
     private WebDriver driver;
     private Map<String, Object> vars;
     JavascriptExecutor js;
