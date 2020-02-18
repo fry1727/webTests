@@ -47,7 +47,6 @@ public class LoginTest {
         new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.name("email")));
         driver.findElement(By.name("email")).click();
         driver.findElement(By.name("email")).sendKeys(data.getEmail());
-        ;
         driver.findElement(By.name("password")).click();
         driver.findElement(By.name("password")).sendKeys(data.getPassword());
         driver.findElement(By.cssSelector("button[class*='Button']")).click();
