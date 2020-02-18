@@ -18,7 +18,7 @@ import java.util.concurrent.TimeUnit;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
-public class LikedMeTest {
+public class QMRewind {
     private WebDriver driver;
     Data data;
 
@@ -38,7 +38,7 @@ public class LikedMeTest {
     }
 
     @Test
-    public void activateSubstciption_LikedMe() throws InterruptedException {
+    public void activateSubscription_QMRewind() throws InterruptedException {
 
         driver.get("https://m.meetville.com/");
         new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.cssSelector(".px-3 > svg")));
@@ -52,16 +52,20 @@ public class LikedMeTest {
         driver.findElement(By.name("password")).sendKeys(data.getPassword());
         driver.findElement(By.cssSelector("button[class*='Button']")).click();
         new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.className("text-title-medium")));
-        //=============================================переход на вкладку Faved me=======================================================================
+        //=============================================переход на вкладку QM Liked me=======================================================================
         TimeUnit.MILLISECONDS.sleep(300);
-        driver.findElement(By.xpath("//div[@class='HeaderIconComponent__icon_wrapper___3ZHUA']")).click();
-        new WebDriverWait(driver, 5).until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'Liked Me')]")));
-        driver.findElement(By.xpath("//span[contains(text(),'Liked Me')]")).click();
+        driver.get("https://m.meetville.com/quickMatch");
+        new WebDriverWait(driver, 5).until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'Quick Match')]")));
+        TimeUnit.SECONDS.sleep(1);
+        driver.findElement(By.xpath("//div[@class='UserMatchSliderComponent__like_buttons_group___1XbGa']/button[1]/*[1]")).click();
+        TimeUnit.SECONDS.sleep(1);
+        driver.findElement(By.xpath("//button[@class='UserMatchSliderComponent__undo_and_info_icons___1_GF_']")).click();
         new WebDriverWait(driver, 5).until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'Buy Subscription')]")));
+
         //======================================проверка элементов на странице===========================================================================================
         assertThat(driver.findElement(By.xpath("//div[@class='HeaderMainContentComponent__inner___2IrBU']")).getText(), is("Get Full Access"));
-        assertThat(driver.findElement(By.xpath("//div[12]//div[1]//h3[1]")).getText(), is("See Who's Interested in You"));
-        assertThat(driver.findElement(By.xpath("//div[12]//div[1]//p[1]")).getText(), is("Know who faved your profile\nand liked your photos"));
+        assertThat(driver.findElement(By.xpath("//div[15]//div[1]//h3[1]")).getText(), is("Rewind Your Last Action"));
+        assertThat(driver.findElement(By.xpath("//div[15]//div[1]//p[1]")).getText(), is("Go back and like again\nin Quick Match"));
         assertThat(driver.findElement(By.xpath("//a[@class='Button__button___2GX_6 Button__link___E_ERf Button__blue___1PGNk text-button rounded-6 color-white VipStepControl__link_center___33Aio']")).getText(), is("BUY SUBSCRIPTION"));
 
     }

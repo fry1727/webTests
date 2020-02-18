@@ -18,7 +18,7 @@ import java.util.concurrent.TimeUnit;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
-public class ViewedMeTest {
+public class LikedMe {
     private WebDriver driver;
     Data data;
 
@@ -38,7 +38,7 @@ public class ViewedMeTest {
     }
 
     @Test
-    public void activateSubstciption_ViewedMe() throws InterruptedException {
+    public void activateSubstciption_LikedMe() throws InterruptedException {
 
         driver.get("https://m.meetville.com/");
         new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.cssSelector(".px-3 > svg")));
@@ -55,13 +55,13 @@ public class ViewedMeTest {
         //=============================================переход на вкладку Faved me=======================================================================
         TimeUnit.MILLISECONDS.sleep(300);
         driver.findElement(By.xpath("//div[@class='HeaderIconComponent__icon_wrapper___3ZHUA']")).click();
-        new WebDriverWait(driver, 5).until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'Viewed Me')]")));
-        driver.findElement(By.xpath("//span[contains(text(),'Viewed Me')]")).click();
+        new WebDriverWait(driver, 5).until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'Liked Me')]")));
+        driver.findElement(By.xpath("//span[contains(text(),'Liked Me')]")).click();
         new WebDriverWait(driver, 5).until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'Buy Subscription')]")));
         //======================================проверка элементов на странице===========================================================================================
         assertThat(driver.findElement(By.xpath("//div[@class='HeaderMainContentComponent__inner___2IrBU']")).getText(), is("Get Full Access"));
-        assertThat(driver.findElement(By.xpath("//div[11]//div[1]//h3[1]")).getText(), is("See Who Viewed You"));
-        assertThat(driver.findElement(By.xpath("//div[11]//div[1]//p[1]")).getText(), is("Keep an eye on the people\nthat look at your profile"));
+        assertThat(driver.findElement(By.xpath("//div[12]//div[1]//h3[1]")).getText(), is("See Who's Interested in You"));
+        assertThat(driver.findElement(By.xpath("//div[12]//div[1]//p[1]")).getText(), is("Know who faved your profile\nand liked your photos"));
         assertThat(driver.findElement(By.xpath("//a[@class='Button__button___2GX_6 Button__link___E_ERf Button__blue___1PGNk text-button rounded-6 color-white VipStepControl__link_center___33Aio']")).getText(), is("BUY SUBSCRIPTION"));
 
     }

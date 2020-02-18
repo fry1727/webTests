@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
@@ -31,12 +32,12 @@ public class LoginTest {
         options.setExperimentalOption("prefs", prefs);
         driver = new ChromeDriver(options);
         data = new Data();
-        data.setEmail("test.pingui@yopmail.com");
+        data.setEmail("test.qwertyuiop@yopmail.com");
         data.setPassword("111111");
     }
 
     @Test
-    public void logIn() {
+    public void logIn() throws InterruptedException {
 
         driver.get("https://m.meetville.com/");
         new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.cssSelector(".px-3 > svg")));
@@ -45,12 +46,14 @@ public class LoginTest {
         driver.findElement(By.cssSelector("a[href*='/login']")).click();
         new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.name("email")));
         driver.findElement(By.name("email")).click();
-        driver.findElement(By.name("email")).sendKeys(data.getPassword());
+        driver.findElement(By.name("email")).sendKeys(data.getEmail());
+        ;
         driver.findElement(By.name("password")).click();
         driver.findElement(By.name("password")).sendKeys(data.getPassword());
         driver.findElement(By.cssSelector("button[class*='Button']")).click();
+        TimeUnit.SECONDS.sleep(1);
         new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.className("text-title-medium")));
-        assertThat(driver.findElement(By.className("text-title-medium")).getText(),is("People Nearby"));
+        assertThat(driver.findElement(By.className("text-title-medium")).getText(), is("People Nearby"));
     }
     @After
     public void tearDown() {

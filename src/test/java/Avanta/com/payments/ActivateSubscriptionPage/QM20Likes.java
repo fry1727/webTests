@@ -62,9 +62,18 @@ public class QM20Likes {
             TimeUnit.SECONDS.sleep(1);
             driver.findElement(By.xpath("//div[@class='UserMatchSliderComponent__like_buttons_group___1XbGa']/button[2]/*[1]\n")).click();
             TimeUnit.SECONDS.sleep(1);
-            if (driver.findElement(By.xpath("//span[contains(text(),'Buy Subscription')]")).isDisplayed())
-                break;
+
+            try {
+                if (driver.findElement(By.xpath("//span[contains(text(),'Buy Subscription')]")).isDisplayed()) {
+                    break;
+                }
+
+            } catch (Exception e) {
+
+            }
+
             i++;
+
         }
         new WebDriverWait(driver, 5).until(ExpectedConditions.elementToBeClickable(By.xpath("//span[contains(text(),'Buy Subscription')]")));
 
