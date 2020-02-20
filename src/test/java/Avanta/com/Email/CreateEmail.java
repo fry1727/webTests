@@ -140,6 +140,11 @@ public class CreateEmail {
         driver.findElement(By.partialLinkText("Welcome to Meetville")).click();
         driver.switchTo().defaultContent();
         driver.switchTo().frame(driver.findElement(By.id("ifmail")));
+        new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//span[contains(text(),'Password:')]")));
+        driver.findElement(By.xpath("//span[contains(text(),'OPEN APP')]")).click();
+
+        new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.className("text-title-medium")));
+        assertThat(driver.findElement(By.className("text-title-medium")).getText(), is("People Nearby"));
 
     }
 
