@@ -19,7 +19,7 @@ public class PaymentPasswordYopmail {
     public static String sPass;
 
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "src/recources/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "src/recources/chromedriver");
 
         ChromeOptions options = new ChromeOptions();
         Map<String, Object> prefs = new HashMap<String, Object>();

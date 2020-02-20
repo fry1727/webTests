@@ -24,7 +24,7 @@ public class PaymentsRegistrationNewUserFor {
 
     @Before
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "src/recources/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "src/recources/chromedriver");
         ChromeOptions options = new ChromeOptions();
         Map<String, Object> prefs = new HashMap<String, Object>();
         prefs.put("profile.default_content_setting_values.notifications", 2); //1-Allow, 2-Block, 0-default
