@@ -130,7 +130,6 @@ public class CreateEmail {
 
         new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.className("text-title-medium")));
         assertThat(driver.findElement(By.className("text-title-medium")).getText(), is("People Nearby"));
-        TimeUnit.SECONDS.sleep(30);
 
         driver.get("http://www.yopmail.com//");
         driver.findElement(By.id("login")).click();
@@ -141,9 +140,6 @@ public class CreateEmail {
         driver.findElement(By.partialLinkText("Welcome to Meetville")).click();
         driver.switchTo().defaultContent();
         driver.switchTo().frame(driver.findElement(By.id("ifmail")));
-        driver.findElement(By.xpath("//span[contains(text(),'OPEN APP')]")).click();
-        new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.className("text-title-medium")));
-        assertThat(driver.findElement(By.className("text-title-medium")).getText(), is("People Nearby"));
 
     }
 
