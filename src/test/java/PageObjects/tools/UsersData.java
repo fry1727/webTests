@@ -1,4 +1,4 @@
-package PageObjects;
+package PageObjects.tools;
 
 public class UsersData {
 
