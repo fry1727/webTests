@@ -1,5 +1,6 @@
 
-package PageObjects;
+package PageObjects.Tests;
+
 
 import PageObjects.Pages.LoginPage;
 import PageObjects.Pages.PeopleNearbyPage;
@@ -8,6 +9,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -17,12 +19,13 @@ import static org.junit.Assert.assertThat;
 public class LoginTest {
 
     private static ChromeDriver driver;
+    //private static UsersData usersData;
 
 
     public static void main(String[] args) {
 
 
-        System.setProperty("webdriver.chrome.driver", "src/recources/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "src/recources/chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         Map<String, Object> prefs = new HashMap<String, Object>();
         prefs.put("profile.default_content_setting_values.notifications", 2); //1-Allow, 2-Block, 0-default
@@ -31,16 +34,18 @@ public class LoginTest {
         //options.addArguments("useragent = Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.116 Safari/537.36");
         //options.addArguments("--headless");
         //options.addArguments("disable-gpu");
-
         options.addArguments("window-size=1400,2100"); // Linux should be activate
         driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        //usersData.setEmail("test.pingui@yopmail.com");
+        //usersData.setPassword("111111");
+        Properties prop = new Properties();
 
         driver.get("https://m.meetville.com/login");
         LoginPage.login_email(driver).click();
-        LoginPage.login_email(driver).sendKeys("test.pingui@yopmail.com");
+        LoginPage.login_email(driver).sendKeys(prop.getProperty("email"));
         LoginPage.login_password(driver).click();
-        LoginPage.login_password(driver).sendKeys("111111");
+        LoginPage.login_password(driver).sendKeys(prop.getProperty("password"));
         LoginPage.login_confirmButton(driver).click();
         assertThat(PeopleNearbyPage.pn_title(driver).getText(), is("People Nearby"));
 
