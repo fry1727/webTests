@@ -4,6 +4,7 @@ package PageObjects.Tests;
 
 import PageObjects.Pages.LoginPage;
 import PageObjects.Pages.PeopleNearbyPage;
+import PageObjects.tools.DriverWithOptions;
 import PageObjects.tools.UsersData;
 import org.junit.After;
 import org.junit.Before;
@@ -21,14 +22,16 @@ import static org.junit.Assert.assertThat;
 
 public class LoginTest {
 
-    private  ChromeDriver driver;
+    //private  ChromeDriver driver;
+    private DriverWithOptions diverOpt;
     UsersData usersData;
 
-      @Before
+    @Before
 
-               public void setUp() {
+    public void setUp() {
 
-        System.setProperty("webdriver.chrome.driver", "src/recources/chromedriverNEW.exe");
+
+        System.setProperty("webdriver.chrome.driver", "src/recources/chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         Map<String, Object> prefs = new HashMap<String, Object>();
         prefs.put("profile.default_content_setting_values.notifications", 2); //1-Allow, 2-Block, 0-default
@@ -56,7 +59,7 @@ public class LoginTest {
         LoginPage.login_confirmButton(driver).click();
         assertThat(PeopleNearbyPage.pn_title(driver).getText(), is("People Nearby"));
 
-        System.out.println(" Login Successfully  ");
+            System.out.println(" Login Successfully ");
     }
         @After
         public void tearDown() {
