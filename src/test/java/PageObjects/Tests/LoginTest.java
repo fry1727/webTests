@@ -18,31 +18,15 @@ import static org.junit.Assert.assertThat;
 public class LoginTest {
 
     private  ChromeDriver driver;
-    //private DriverWithOptions diverOpt;
-   // DriverWithOptions driverWithOptions = new DriverWithOptions();
+    DriverWithOptions driverWithOptions;
     UsersData usersData;
-  //  driverWithOptions.driverOpt
 
     @Before
 
     public void setUp() {
 
-
-        //System.setProperty("webdriver.chrome.driver", "src/recources/chromedriverNEW.exe");
-        //ChromeOptions options = new ChromeOptions();
-        //Map<String, Object> prefs = new HashMap<String, Object>();
-        //prefs.put("profile.default_content_setting_values.notifications", 2); //1-Allow, 2-Block, 0-default
-        //options.setExperimentalOption("prefs", prefs);
-       // options.addArguments("--no-sandbox");
-        //options.addArguments("useragent = Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.116 Safari/537.36");
-        //options.addArguments("--headless");
-        //options.addArguments("disable-gpu");
-        DriverWithOptions driverWithOptions = new DriverWithOptions();
+        driverWithOptions = new DriverWithOptions();
         driverWithOptions.diverOpt();
-        //driverWithOptions.driverOpt;
-       // options.addArguments("window-size=1400,2100"); // Linux should be activate
-       // driver = new ChromeDriver(options);
-
         usersData = new UsersData();
         usersData.setEmail("test.pingui@yopmail.com");
         usersData.setPassword("111111");
