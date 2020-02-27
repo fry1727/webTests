@@ -27,6 +27,7 @@ public class LoginTest {
 
         driverWithOptions = new DriverWithOptions();
         driverWithOptions.diverOpt();
+        this.driver = driverWithOptions.driver;
         usersData = new UsersData();
         usersData.setEmail("test.pingui@yopmail.com");
         usersData.setPassword("111111");
