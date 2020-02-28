@@ -4,6 +4,7 @@ package PageObjects.Tests;
 
 import PageObjects.Pages.LoginPage;
 import PageObjects.Pages.PeopleNearbyPage;
+import PageObjects.tools.ApplicationTexts;
 import PageObjects.tools.DriverWithOptions;
 import PageObjects.tools.UsersData;
 import org.junit.After;
@@ -14,12 +15,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
-
 public class LoginTest {
 
     private  ChromeDriver driver;
     DriverWithOptions driverWithOptions;
     UsersData usersData;
+
 
     @Before
 
@@ -34,17 +35,17 @@ public class LoginTest {
 
     }
 
-        @Test
-                public  void login() throws InterruptedException {
+    @Test
+    public void login() {
         driver.get("https://m.meetville.com/login");
         LoginPage.login_email(driver).click();
         LoginPage.login_email(driver).sendKeys(usersData.getEmail());
         LoginPage.login_password(driver).click();
         LoginPage.login_password(driver).sendKeys(usersData.getPassword());
         LoginPage.login_confirmButton(driver).click();
-        assertThat(PeopleNearbyPage.pn_title(driver).getText(), is("People Nearby"));
+        assertThat(PeopleNearbyPage.pn_title(driver).getText(), is(ApplicationTexts.peopleNearbyText(toString())));
 
-            System.out.println(" Login Successfully ");
+        System.out.println(" Login Successfully ");
     }
         @After
         public void tearDown() {
@@ -53,5 +54,3 @@ public class LoginTest {
     }
 
 
-    //  new WebDriverWait(driver, 20).until(ExpectedConditions.elementToBeClickable(By.className("text-title-medium")));
-    // assertThat(driver.findElement(By.className("text-title-medium")).getText(),is("People Nearby"));
