@@ -77,6 +77,16 @@ public class ActivateSubscriptionPage {
         return element;
     }
 
+    public static WebElement as_sendMessages(WebDriver driver) {
+        element = driver.findElement(By.xpath("//div[10]//div[1]//h3[1]"));
+        return element;
+    }
+
+    public static WebElement as_chatWithAnyMember(WebDriver driver) {
+        element = driver.findElement(By.xpath("//div[10]//div[1]//p[1]"));
+        return element;
+    }
+
 }
 
 
