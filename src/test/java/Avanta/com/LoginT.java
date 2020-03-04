@@ -32,9 +32,9 @@ public class LoginT {
         prefs.put("profile.default_content_setting_values.notifications", 2); //1-Allow, 2-Block, 0-default
         options.setExperimentalOption("prefs", prefs);
         options.addArguments("--no-sandbox");
-        options.addArguments("--headless");
-        options.addArguments("disable-gpu");
-        options.addArguments("window-size=1400,2100"); // Linux should be activate
+        //options.addArguments("--headless");
+        //options.addArguments("disable-gpu");
+        //options.addArguments("window-size=1400,2100"); // Linux should be activate
         driver = new ChromeDriver(options);
         data = new Data();
         data.setEmail("test.qwertyuiop@yopmail.com");
