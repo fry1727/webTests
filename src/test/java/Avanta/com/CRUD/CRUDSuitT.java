@@ -5,6 +5,6 @@ import org.junit.runners.Suite;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({Create.class, Read.class, Update.class, Delete.class})
-public class CRUDSuitTest {
+public class CRUDSuitT {
 
 }
