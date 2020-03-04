@@ -31,7 +31,7 @@ public class LoginTest {
         this.driver = driverWithOptions.driver;
         usersData = new UsersData();
         usersData.setEmail("test.pingui@yopmail.com");
-        usersData.setPassword("111111");
+        usersData.setPassword("1111111");
 
     }
 
@@ -46,7 +46,7 @@ public class LoginTest {
         assertThat(PeopleNearbyPage.pn_title(driver).getText(), is(ApplicationTexts.peopleNearbyText(toString())));
 
 
-        System.out.println(" Login Successfully ");
+        System.out.println(" =======================================================Login Successfully============================================================== ");
     }
         @After
         public void tearDown() {
