@@ -30,8 +30,8 @@ public class LoginTest {
         driverWithOptions.diverOpt();
         this.driver = driverWithOptions.driver;
         usersData = new UsersData();
-        usersData.setEmail("test.pingui@yopmail.com");
-        usersData.setPassword("1111111");
+        usersData.setEmail("test.userforautotestsubscheking@yopmail.com");
+        usersData.setPassword("111111");
 
     }
 
