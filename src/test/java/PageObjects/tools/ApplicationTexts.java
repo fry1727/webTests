@@ -33,4 +33,21 @@ public class ApplicationTexts {
         apptext = "BUY SUBSCRIPTION";
         return apptext;
     }
+    public static String seeWhoInterestedinYou(String apptext) {
+        apptext = "See Who's Interested in You";
+        return apptext;
+    }
+    public static String knowWhoFavedYourProfile(String apptext) {
+        apptext = "Know who faved your profile\nand liked your photos";
+        return apptext;
+    }
+
+    public static String seeWhoViewedYou(String apptext) {
+        apptext = "See Who Viewed You";
+        return apptext;
+    }
+    public static String keepAnEyeOntheProfile(String apptext) {
+        apptext = "Keep an eye on the people\nthat look at your profile";
+        return apptext;
+    }
 }

@@ -45,7 +45,7 @@ public class ActivateSubscriptionTest {
         assertThat(ActivateSubscriptionPage.as_sendMessages(driver).getText(), is(ApplicationTexts.sendMessagesText(toString())));
         assertThat(ActivateSubscriptionPage.as_chatWithAnyMember(driver).getText(), is(ApplicationTexts.chatWithAnyMemberText(toString())));
         assertThat(ActivateSubscriptionPage.as_buySubscriptionButton(driver).getText(), is(ApplicationTexts.buySubscriptionText(toString())));
-        System.out.println("=====================================================Checking successful=========================================================================");
+        System.out.println("===================================================Checking Activate subscription on Activate subs page successful=======================================================================");
 
     }
 

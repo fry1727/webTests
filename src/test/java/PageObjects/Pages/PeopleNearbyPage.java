@@ -58,4 +58,9 @@ public class PeopleNearbyPage {
         return element;
     }
 
+    public static WebElement pn_ChatButton_onFirstUser(WebDriver driver) {
+        element = driver.findElement(By.xpath("//div[1]//div[2]//button[1]"));
+        return element;
+    }
+
 }
