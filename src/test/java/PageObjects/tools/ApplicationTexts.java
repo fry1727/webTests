@@ -50,4 +50,32 @@ public class ApplicationTexts {
         apptext = "Keep an eye on the people\nthat look at your profile";
         return apptext;
     }
+
+    public static String pleaseUseThePassword (String apptext) {
+        apptext = "Please use the password sent to your email during the registration.";
+        return apptext;
+    }
+    public static String signIn (String apptext) {
+        apptext = "SIGN IN";
+        return apptext;
+    }
+
+    public static String resetYourPassword(String apptext) {
+        apptext = "Reset your password?";
+        return apptext;
+    }
+
+    public static String pleaseEnterYourEmail(String apptext) {
+        apptext = "Please enter your email";
+        return apptext;
+    }
+    public  static String pleaseEnterCorrectEmailAndPassword (String apptext){
+        apptext = "Please enter correct email and password";
+        return apptext;
+    }
+
+    public static String getNewPassword (String apptext) {
+        apptext = "GET NEW PASSWORD";
+        return apptext;
+    }
 }
