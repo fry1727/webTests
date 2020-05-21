@@ -42,13 +42,13 @@ public class LoginPage {
         element = driver.findElement(By.cssSelector("a[href*='/reset_password']"));
         return element;
     }
-     public static WebElement login_emailError (WebDriver driver) {
+     public static WebElement login_emailError(WebDriver driver) {
         element = driver.findElement(By.cssSelector(".Input__error___T9UAQ > span\n"));
         return element;
      }
 
      public static WebElement login_emailPasswordError(WebDriver driver) {
-        element = driver.findElement(By.cssSelector(".LoginForm__error___SF0Ae > span\n"));
+        element = driver.findElement(By.xpath("//*[@id=\"app-root\"]/main/form/div[2]/span"));
         return element;
      }
 

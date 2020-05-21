@@ -35,8 +35,7 @@ public class LoginVisualTest {
         assertThat(LoginPage.login_textPleaseUseThePassword(driver).getText(), is(ApplicationTexts.pleaseUseThePassword(toString())));
         LoginPage.login_email(driver).click();
         CommonElements.Main(driver).click();
-        TimeUnit.SECONDS.sleep(1);
-        //assertThat(LoginPage.login_email(driver).getText(), is(ApplicationTexts.pleaseEnterYourEmail(toString())));
+        assertThat(LoginPage.login_emailError(driver).getText(), is(ApplicationTexts.pleaseEnterYourEmail(toString())));
         LoginPage.login_password(driver).click();
         CommonElements.Main(driver).click();
         assertThat(LoginPage.login_emailPasswordError(driver).getText(), is(ApplicationTexts.pleaseEnterCorrectEmailAndPassword(toString())));
