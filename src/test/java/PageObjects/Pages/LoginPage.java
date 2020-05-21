@@ -32,4 +32,25 @@ public class LoginPage {
         return element;
     }
 
+    public static  WebElement login_textPleaseUseThePassword(WebDriver driver) {
+        element = driver.findElement(By.cssSelector("p:nth-child(1) > span"));
+
+        return element;
+    }
+
+    public static WebElement login_resetPassword(WebDriver driver) {
+        element = driver.findElement(By.cssSelector("a[href*='/reset_password']"));
+        return element;
+    }
+     public static WebElement login_emailError(WebDriver driver) {
+        element = driver.findElement(By.cssSelector(".Input__error___T9UAQ > span\n"));
+        return element;
+     }
+
+     public static WebElement login_emailPasswordError(WebDriver driver) {
+        element = driver.findElement(By.xpath("//*[@id=\"app-root\"]/main/form/div[2]/span"));
+        return element;
+     }
+
+
 }
