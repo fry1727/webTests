@@ -43,7 +43,7 @@ public class LoginPage {
         return element;
     }
      public static WebElement login_emailError(WebDriver driver) {
-        element = driver.findElement(By.cssSelector(".Input__error___T9UAQ > span\n"));
+        element = driver.findElement(By.xpath("//*[@id=\"app-root\"]/main/form/label[1]/span/span"));
         return element;
      }
 
