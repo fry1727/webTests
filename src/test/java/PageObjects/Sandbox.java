@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Properties;
 
-public class Sandbox  {
+public class Sandbox {
 
 
     public static void main(String[] args) {
@@ -28,11 +28,15 @@ public class Sandbox  {
         params.add(new BasicNameValuePair("body", "bar"));
         params.add(new BasicNameValuePair("userId", "1"));*/
 
-
         try {
             final Response postResult = Request.Post("https://api.meetville.com/graphql")
-                    .bodyString("{\"query\":\"query clientTexts {\\n  viewer {\\n    appConfig {\\n      supportEmail\\n    }\\n  }\\n}\",\"operationName\":\"clientTexts\"}", ContentType.APPLICATION_JSON)
-                    .addHeader( "CLIENT", "{\"id\":\"ios.justmen.def\",\"dtype\":\"phone\",\"lang\":\"en_FR\",\"metric\":\"0\",\"ccode\":\"BYR\",\"locale\":\"fr_FR\",\"os\":\"android\",\"osv\":\"1.0.0\",\"did\":\"EFFBBF4C-96EC-42D7-87B3-F37B77D2F210\",\"dname\":\"iPhone 6 Plus\",\"decsep\":\".\",\"csymbol\":\".\",\"net\":\"wi-fi\",\"screen\":\"400x500\",\"timezone\":\"Europe/Minsk\",\"push\":\"1\",\"buildv\":\"8.6\"}")
+                    .bodyString("{\"query\":\"mutation generateAccessToken($input: GenerateAccessTokenMutationInput!)" +
+                            " {\\n    generateAccessToken(input:$input) {\\n    clientMutationId,\\n    viewer {\\n      accessToken\\n      xsrfToken\\n     " +
+                            " profile {\\n        id\\n        isVip\\n      }\\n    },\\n    errors {\\n      key,\\n      message\\n    }\\n  }\\n}\\n\"," +
+                            "\"variables\":{\"input\":{\"email\":\"golodny@tut.by\",\"password\":\"111111\",\"clientMutationId\":\"abcde\"}},\"operationName\":\"generateAccessToken\"}", ContentType.APPLICATION_JSON)
+                    .addHeader("CLIENT", "{\"id\":\"ios.justmen.def\",\"dtype\":\"phone\",\"lang\":\"en_FR\",\"metric\":\"0\",\"ccode\":\"BYR\"," +
+                            "\"locale\":\"fr_FR\",\"os\":\"android\",\"osv\":\"1.0.0\",\"did\":\"EFFBBF4C-96EC-42D7-87B3-F37B77D2F210\"," +
+                            "\"dname\":\"iPhone 6 Plus\",\"decsep\":\".\",\"csymbol\":\".\",\"net\":\"wi-fi\",\"screen\":\"400x500\",\"timezone\":\"Europe/Minsk\",\"push\":\"1\",\"buildv\":\"8.6\"}")
                     .execute();
             System.out.println(postResult.returnContent().toString());
 
@@ -40,6 +44,6 @@ public class Sandbox  {
 
             System.out.println(Ex.getMessage());
 
-        }
+         }
     }
-}
+    }
