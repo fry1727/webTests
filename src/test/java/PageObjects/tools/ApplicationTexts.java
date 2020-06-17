@@ -85,12 +85,12 @@ public class ApplicationTexts {
     }
 
     public static String letsFindYourTEXT(String apptext) {
-        apptext = "Let's find your";
+        apptext = "LET'S FIND YOUR";
         return apptext;
     }
 
     public static String nextDateTEXT(String apptext) {
-        apptext = "next date";
+        apptext = "NEXT DATE";
         return apptext;
     }
 
@@ -140,7 +140,7 @@ public class ApplicationTexts {
     }
 
     public static String continueButtonText(String apptext) {
-        apptext = "Continue";
+        apptext = "CONTINUE";
         return apptext;
     }
 
@@ -189,6 +189,44 @@ public class ApplicationTexts {
     }
     public static String andText(String apptext){
         apptext = "and";
+        return apptext;
+    }
+    public static String manIcon(String apptext){
+        apptext = "\uD83D\uDD7A";
+        return apptext;
+    }
+    public static String womanIcon(String apptext){
+        apptext = "\uD83D\uDC83";
+        return apptext;
+    }
+    public static String cookiePoliceBannerText1(String apptext){
+        apptext = "If you continue to browse you agree to the use of cookies. Learn more and change cookie settings";
+        return apptext;
+    }
+    public static String cookiePoliceBannerText2(String apptext){
+        apptext = "here";
+        return apptext;
+    }
+
+    public static String seekingAManFromMANICON(String apptext) {
+        apptext = "\uD83D\uDC6C";
+        return apptext;
+    }
+
+    public static String seekingAWomanfromManICON(String apptext) {
+        apptext ="\uD83D\uDC6B";
+        return apptext;
+    }
+    public static String placeholderBirthdayText(String apptext) {
+        apptext= "Birthday";
+        return apptext;
+    }
+    public static String tapTheOptionsText(String apptext) {
+        apptext = "Tap the Options";
+        return apptext;
+    }
+    public static String toDescribeYourself(String apptext) {
+        apptext = "to Describe Yourself";
         return apptext;
     }
 }

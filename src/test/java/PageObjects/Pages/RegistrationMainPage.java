@@ -59,12 +59,16 @@ public class RegistrationMainPage {
     }
 
     public static WebElement registrationMain3WhenIsYourBirthday(WebDriver driver) {
-        element = driver.findElement(By.xpath("//*[@id=\"app-root\"]/main/div/main/div/div/p/span"));
+        element = driver.findElement(By.xpath("//span[contains(text(),'When is your birthday?')]"));
         return element;
     }
 
     public static WebElement registrationMain3BirthdayInput(WebDriver driver) {
         element = driver.findElement(By.xpath("//*[@id=\"app-root\"]/main/div/main/div/div/div[1]/input"));
+        return element;
+    }
+    public static WebElement registrationMain3BirthdayPlaceholder(WebDriver driver) {
+        element = driver.findElement(By.xpath("//input[@placeholder='Birthday']"));
         return element;
     }
 
@@ -123,6 +127,17 @@ public class RegistrationMainPage {
         return element;
     }
 
-
+    public static WebElement registrationMainCookiePolicyBanner (WebDriver driver){
+        element = driver.findElement(By.xpath("//*[@id=\"landing-header\"]/header/div[1]/div/span"));
+        return element;
+    }
+    public static WebElement registrationMain2SignIn(WebDriver driver) {
+        element = driver.findElement(By.xpath("//*[@id=\"app-root\"]/main/div/main/div/div/div/p[2]/a/span"));
+        return element;
+    }
+    public static WebElement registrationMain2AlreadyHawAnAc(WebDriver driver) {
+        element= driver.findElement(By.xpath("//*[@id=\"app-root\"]/main/div/main/div/div/div/p[2]/span"));
+        return element;
+    }
 }
 //

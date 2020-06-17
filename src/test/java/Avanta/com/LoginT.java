@@ -25,7 +25,7 @@ public class LoginT {
 
     @Before
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "src/recources/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "src/recources/chromedriverMac");
         ChromeOptions options = new ChromeOptions();
         Map<String, Object> prefs = new HashMap<String, Object>();
 
