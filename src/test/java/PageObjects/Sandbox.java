@@ -2,9 +2,16 @@ package PageObjects;
 
 import PageObjects.tools.DriverWithOptions;
 import PageObjects.tools.UsersData;
+import org.apache.http.Header;
+import org.apache.http.HttpHeaders;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.fluent.Content;
 import org.apache.http.client.fluent.Request;
 import org.apache.http.client.fluent.Response;
+import org.apache.http.client.methods.HttpGet;
 import org.apache.http.entity.ContentType;
+import org.apache.http.impl.client.HttpClientBuilder;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -21,6 +28,7 @@ public class Sandbox  {
     UsersData usersData;
 
 
+
     @Before
 
     public void setUp() {
@@ -29,9 +37,8 @@ public class Sandbox  {
         driverWithOptions.diverOpt();
         this.driver = driverWithOptions.driver;
         usersData = new UsersData();
-        usersData.setEmail("test.userforautotestsubscheking1111@yopmail.com");
+        usersData.setEmail("test.userchekingreg3363e05@yopmail.com");
         usersData.setPassword("111111");
-
         try {
 //            final Response postResult = Request.Post("https://api.meetville.com/graphql")
 //                    .bodyString("{\"query\":\"mutation generateAccessToken($input: GenerateAccessTokenMutationInput!)" +
@@ -58,8 +65,13 @@ public class Sandbox  {
                             "\"locale\":\"fr_FR\",\"os\":\"android\",\"osv\":\"1.0.0\",\"did\":\"EFFBBF4C-96EC-42D7-87B3-F37B77D2F210\"," +
                             "\"dname\":\"iPhone 6 Plus\",\"decsep\":\".\",\"csymbol\":\".\",\"net\":\"wi-fi\",\"screen\":\"400x500\",\"timezone\":\"Europe/Minsk\",\"push\":\"1\",\"buildv\":\"8.6\"}")
                     .execute();
+            //  System.out.println(postResult.returnResponse().getHeaders("xsrfToken"));
 
-            System.out.println(postResult.returnContent().toString());
+            //postResult.returnResponse().getHeaders()
+
+
+
+
         } catch (Exception Ex) {
             System.out.println(Ex.getMessage());
         }
@@ -67,9 +79,27 @@ public class Sandbox  {
 
 
     @Test
-    public void sandy()  {
+    public void sandy() throws IOException {
+
+//        HttpClient client = HttpClientBuilder.create().build();
+//        HttpGet request = new HttpGet("https://m.meetville.com/");
+//        HttpResponse response = client.execute(request);
+//        response.set
+
+
+////get all headers
+//        Header[] headers = response.getAllHeaders();
+//        for (Header header : headers) {
+//            System.out.println("Key : " + header.getName()
+//                    + " ,Value : " + header.getValue());
+//        }
+//
+////get header by 'key'
+//        String server = response.getFirstHeader("Server").getValue();
+//        System.out.println(server);
 
         driver.get("https://m.meetville.com/");
+
 
     }
     @After
