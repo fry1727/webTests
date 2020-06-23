@@ -55,7 +55,7 @@ public class PortrayYourselfPage {
      }
 
      public static WebElement pYSmokingNo(WebDriver driver){
-        element = driver.findElement(By.xpath("//div[@id='bodyType']//li[1]//div[1]"));
+        element = driver.findElement(By.xpath("//*[@id='smokes']/ul/li[1]/div[1]"));
         return element;
      }
 

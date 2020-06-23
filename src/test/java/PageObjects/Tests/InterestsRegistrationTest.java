@@ -1,12 +1,12 @@
 package PageObjects.Tests;
 
-import PageObjects.Pages.*;
+import PageObjects.Pages.InterestsRegistrationPage;
+import PageObjects.Pages.LoginPage;
+import PageObjects.Pages.PhotoUploadPage;
+import PageObjects.Pages.PortrayYourselfPage;
 import PageObjects.tools.ApplicationTexts;
 import PageObjects.tools.DriverWithOptions;
 import PageObjects.tools.UsersData;
-import org.apache.http.client.fluent.Request;
-import org.apache.http.client.fluent.Response;
-import org.apache.http.entity.ContentType;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -19,7 +19,7 @@ import java.util.concurrent.TimeUnit;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
-public class PortrayYourselfTest {
+public class InterestsRegistrationTest {
 
     private ChromeDriver driver;
     DriverWithOptions driverWithOptions;
@@ -33,6 +33,7 @@ public class PortrayYourselfTest {
         driverWithOptions = new DriverWithOptions();
         driverWithOptions.diverOpt();
         this.driver = driverWithOptions.driver;
+        usersData = new UsersData();
         usersData = new UsersData();
         usersData.setEmail("test.1autoreg39510@yopmail.com");
         usersData.setPassword("111111");
@@ -61,57 +62,36 @@ public class PortrayYourselfTest {
 
 
     @Test
-    public void pYTest() throws AWTException, InterruptedException {
+    public void interestsTest() throws AWTException, InterruptedException {
         driver.get("https://m.meetville.com/login");
         LoginPage.login_email(driver).click();
         LoginPage.login_email(driver).sendKeys(usersData.getEmail());
         LoginPage.login_password(driver).click();
         LoginPage.login_password(driver).sendKeys(usersData.getPassword());
         LoginPage.login_confirmButton(driver).click();
-        assertThat(PortrayYourselfPage.PYTapTheOptionsToDescribeYourself(driver).getText(), is(ApplicationTexts.tapTheOptionsText(toString())+  "\n" + ApplicationTexts.toDescribeYourself(toString())));
-
-
-        // driver.get("https://m.meetville.com/registration_steps/portrayYourself");
-        PortrayYourselfPage.pYLookingForChat(driver).click();
-        TimeUnit.SECONDS.sleep(1);
-        PortrayYourselfPage.pYRelationshipHistoryNeverMarried(driver).click();
-        TimeUnit.SECONDS.sleep(1);
-        PortrayYourselfPage.pYDoYouHaveKidsNo(driver).click();
-        TimeUnit.SECONDS.sleep(1);
-        PortrayYourselfPage.pYDoYouWantChildrenNo(driver).click();
-        TimeUnit.SECONDS.sleep(1);
-        PortrayYourselfPage.pYEthnicityIndian(driver).click();
-        TimeUnit.SECONDS.sleep(1);
-        PortrayYourselfPage.pYReligionAgnostic(driver).click();
-        TimeUnit.SECONDS.sleep(1);
-        PortrayYourselfPage.pYEducationNoDegree(driver).click();
-        TimeUnit.SECONDS.sleep(1);
-        PortrayYourselfPage.pyBodyTypeAverage(driver).click();
-        TimeUnit.SECONDS.sleep(1);
-        PortrayYourselfPage.pYSmokingNo(driver).click();
-        TimeUnit.SECONDS.sleep(1);
-        PortrayYourselfPage.pYDrinkingNo(driver).click();
-        TimeUnit.SECONDS.sleep(1);
-        PortrayYourselfPage.pYHeightScale(driver).click();
-        TimeUnit.SECONDS.sleep(1);
-        Robot robot = new Robot();
-        robot.keyPress(KeyEvent.VK_RIGHT);
-        robot.keyPress(KeyEvent.VK_RIGHT);
-        robot.keyPress(KeyEvent.VK_RIGHT);
-        PortrayYourselfPage.pYHeightScale(driver).click();
-        TimeUnit.SECONDS.sleep(1);
-        PortrayYourselfPage.pYSaveAndContinueButton(driver).click();
 
         assertThat(InterestsRegistrationPage.interestsPickUpAtLeast5Interests(driver).getText(),
                 is(ApplicationTexts.pickUpAtLeast5Interests(toString())));
 
+        InterestsRegistrationPage.interestsCampingHiking(driver).click();
 
+        InterestsRegistrationPage.interestsCharity(driver).click();
+
+        InterestsRegistrationPage.interestsCoking(driver).click();
+
+        InterestsRegistrationPage.interestsCollecting(driver).click();
+
+        InterestsRegistrationPage.interestsCycling(driver).click();
+
+        InterestsRegistrationPage.interestsContinueButton(driver).click();
+
+        assertThat(PhotoUploadPage.photoUploadUploadYourPhotos(driver).getText(), is(ApplicationTexts.uploadYourPhotos(toString())));
 
     }
-    @After
+
+        @After
     public void tearDown() {
         driver.quit();
     }
 
 }
-

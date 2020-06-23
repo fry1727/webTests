@@ -229,4 +229,13 @@ public class ApplicationTexts {
         apptext = "to Describe Yourself";
         return apptext;
     }
+    public static String pickUpAtLeast5Interests(String apptext) {
+        apptext = "Pick Up at Least 5 Interests";
+        return apptext;
+    }
+
+    public static String uploadYourPhotos(String apptext) {
+        apptext = "Upload Your Photos";
+        return apptext;
+    }
 }

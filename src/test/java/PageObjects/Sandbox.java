@@ -37,7 +37,7 @@ public class Sandbox  {
         driverWithOptions.diverOpt();
         this.driver = driverWithOptions.driver;
         usersData = new UsersData();
-        usersData.setEmail("test.userchekingreg3363e05@yopmail.com");
+        usersData.setEmail("test.usercheking23423@yopmail.com");
         usersData.setPassword("111111");
         try {
 //            final Response postResult = Request.Post("https://api.meetville.com/graphql")
@@ -55,17 +55,41 @@ public class Sandbox  {
             final Response postResult = Request.Post("https://api.meetville.com/graphql")
                     .bodyString("{\"query\":\"mutation CreateUser($input_0: UserRegistrationMutationInput!) {\\n  userRegistration(input:$input_0)" +
                             "{\\n    errors {\\n      key\\n      message\\n    }\\n   " +
-                            " viewer {\\n      profile {\\n        id\\n        sex\\n        lookingFor\\n        firstName\\n        email\\n        fullYears\\n        city {\\n          name\\n        }\\n  " +
+                            " viewer {\\n   xsrfToken\\n        profile {\\n        id\\n        sex\\n        lookingFor\\n        firstName\\n        email\\n        fullYears\\n        city {\\n          name\\n        }\\n  " +
                             "    searchSettings {\\n     sex\\n        ageFrom\\n        ageTo\\n        isMetric\\n        distance\\n        cmHeightFrom\\n        cmHeightTo\\n        cityId\\n      }\\n\\n    }\\n  }\\n}\\n}\\n\"," +
                             "\"variables\":{\"input_0\":{\"firstName\":\"TestWithAR\"," +
                             "\"email\":\"" + usersData.getEmail() + "\"," +
                             "\"cityId\":\"Y2l0eTo2MTMw\"," +
                             "\"sex\":\"female\",\"lookingFor\":\"male\",\"birthdate\":\"1992-03-24\",\"clientMutationId\":\"abcdde\"}},\"operationName\":\"CreateUser\"}", ContentType.APPLICATION_JSON)
-                    .addHeader("CLIENT", "{\"id\":\"ios.justmen.def\",\"dtype\":\"phone\",\"lang\":\"en_FR\",\"metric\":\"0\",\"ccode\":\"BYR\"," +
-                            "\"locale\":\"fr_FR\",\"os\":\"android\",\"osv\":\"1.0.0\",\"did\":\"EFFBBF4C-96EC-42D7-87B3-F37B77D2F210\"," +
-                            "\"dname\":\"iPhone 6 Plus\",\"decsep\":\".\",\"csymbol\":\".\",\"net\":\"wi-fi\",\"screen\":\"400x500\",\"timezone\":\"Europe/Minsk\",\"push\":\"1\",\"buildv\":\"8.6\"}")
+                    .addHeader("CLIENT", "{\"id\":\"web.mtvl.def\",\"dtype\":\"phone\",\"metric\":1,\"ccode\":\"USD\",\"lang\":\"ru\",\"locale\":\"ru\"," +
+                            "\"os\":\"Android\",\"osv\":\"6.0\",\"did\":\"EFFBBF4C-96EC-42D7-87B3-F37B77D2F210\",\"dname\":\"Nexus 5\",\"decsep\":\".\"," +
+                            "\"csymbol\":\".\",\"screen\":\"1000x1242\",\"timezone\":\"Europe/Minsk\",\"push\":0,\"buildv\":\"2.4.2\"}")
                     .execute();
-            //  System.out.println(postResult.returnResponse().getHeaders("xsrfToken"));
+
+            System.out.println(postResult.returnResponse().toString());
+
+
+            System.out.println(postResult.returnContent().toString());
+
+
+
+//                    HttpClient client = HttpClientBuilder.create().build();
+//        HttpGet request = new HttpGet("https://m.meetville.com/");
+//        HttpResponse response = client.execute(request);
+//
+//
+//
+////get all headers
+//        Header[] headers = response.getAllHeaders();
+//        for (Header header : headers) {
+//            System.out.println("Key : " + header.getName()
+//                    + " ,Value : " + header.getValue());
+//        }
+//
+////get header by 'key'
+//        String server = response.getFirstHeader("Server").getValue();
+//        //System.out.println(server);
+
 
             //postResult.returnResponse().getHeaders()
 
