@@ -105,7 +105,7 @@ public class PortrayYourselfTest {
         assertThat(InterestsRegistrationPage.interestsPickUpAtLeast5Interests(driver).getText(),
                 is(ApplicationTexts.pickUpAtLeast5Interests(toString())));
 
-
+        System.out.println(" =======================================================Portray Yourself page complete Successfully============================================================== ");
 
     }
     @After

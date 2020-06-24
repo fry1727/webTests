@@ -238,4 +238,6 @@ public class ApplicationTexts {
         apptext = "Upload Your Photos";
         return apptext;
     }
+
+
 }
