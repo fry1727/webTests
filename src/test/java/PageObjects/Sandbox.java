@@ -22,7 +22,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class Sandbox  {
-
+String acces;
     private  ChromeDriver driver;
     DriverWithOptions driverWithOptions;
     UsersData usersData;
@@ -37,7 +37,7 @@ public class Sandbox  {
         driverWithOptions.diverOpt();
         this.driver = driverWithOptions.driver;
         usersData = new UsersData();
-        usersData.setEmail("test.usercheking23423@yopmail.com");
+        usersData.setEmail("test.userch23009@yopmail.com");
         usersData.setPassword("111111");
         try {
 //            final Response postResult = Request.Post("https://api.meetville.com/graphql")
@@ -65,33 +65,22 @@ public class Sandbox  {
                             "\"os\":\"Android\",\"osv\":\"6.0\",\"did\":\"EFFBBF4C-96EC-42D7-87B3-F37B77D2F210\",\"dname\":\"Nexus 5\",\"decsep\":\".\"," +
                             "\"csymbol\":\".\",\"screen\":\"1000x1242\",\"timezone\":\"Europe/Minsk\",\"push\":0,\"buildv\":\"2.4.2\"}")
                     .execute();
-
-            System.out.println(postResult.returnResponse().toString());
-
-
             System.out.println(postResult.returnContent().toString());
 
-
-
-//                    HttpClient client = HttpClientBuilder.create().build();
-//        HttpGet request = new HttpGet("https://m.meetville.com/");
-//        HttpResponse response = client.execute(request);
+//           String s = (postResult.returnResponse().getFirstHeader("Set-Cookie").toString());
+//            String[]lines=s.split("\n");
+//            for (String line : lines) {
+//
+//                int pos = line.indexOf(";");
+//                String ACCToken = line.substring(24, pos);
+//                System.out.println(ACCToken);
+//                acces = ACCToken;
+//            }
 //
 //
-//
-////get all headers
-//        Header[] headers = response.getAllHeaders();
-//        for (Header header : headers) {
-//            System.out.println("Key : " + header.getName()
-//                    + " ,Value : " + header.getValue());
-//        }
-//
-////get header by 'key'
-//        String server = response.getFirstHeader("Server").getValue();
-//        //System.out.println(server);
 
+            // System.out.println(postResult.returnContent().toString());
 
-            //postResult.returnResponse().getHeaders()
 
 
 
@@ -105,22 +94,6 @@ public class Sandbox  {
     @Test
     public void sandy() throws IOException {
 
-//        HttpClient client = HttpClientBuilder.create().build();
-//        HttpGet request = new HttpGet("https://m.meetville.com/");
-//        HttpResponse response = client.execute(request);
-//        response.set
-
-
-////get all headers
-//        Header[] headers = response.getAllHeaders();
-//        for (Header header : headers) {
-//            System.out.println("Key : " + header.getName()
-//                    + " ,Value : " + header.getValue());
-//        }
-//
-////get header by 'key'
-//        String server = response.getFirstHeader("Server").getValue();
-//        System.out.println(server);
 
         driver.get("https://m.meetville.com/");
 
