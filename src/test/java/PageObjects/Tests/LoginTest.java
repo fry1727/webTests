@@ -6,11 +6,14 @@ import PageObjects.Pages.LoginPage;
 import PageObjects.Pages.PeopleNearbyPage;
 import PageObjects.tools.ApplicationTexts;
 import PageObjects.tools.DriverWithOptions;
+import PageObjects.tools.TakeScreenshots;
 import PageObjects.tools.UsersData;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.io.IOException;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
@@ -31,22 +34,26 @@ public class LoginTest {
         this.driver = driverWithOptions.driver;
         usersData = new UsersData();
         usersData.setEmail("test.userforautotestsubscheking@yopmail.com");
-        usersData.setPassword("111111");
+        usersData.setPassword("111");
 
     }
 
     @Test
-    public void login() {
-        driver.get("https://m.meetville.com/login");
-        LoginPage.login_email(driver).click();
-        LoginPage.login_email(driver).sendKeys(usersData.getEmail());
-        LoginPage.login_password(driver).click();
-        LoginPage.login_password(driver).sendKeys(usersData.getPassword());
-        LoginPage.login_confirmButton(driver).click();
-        assertThat(PeopleNearbyPage.pn_title(driver).getText(), is(ApplicationTexts.peopleNearbyText(toString())));
+    public void login() throws IOException {
+        try {
+            driver.get("https://m.meetville.com/login");
+            LoginPage.login_email(driver).click();
+            LoginPage.login_email(driver).sendKeys(usersData.getEmail());
+            LoginPage.login_password(driver).click();
+            LoginPage.login_password(driver).sendKeys(usersData.getPassword());
+            LoginPage.login_confirmButton(driver).click();
+            assertThat(PeopleNearbyPage.pn_title(driver).getText(), is(ApplicationTexts.peopleNearbyText(toString())));
 
 
-        System.out.println(" =======================================================Login Successfully============================================================== ");
+            System.out.println(" =======================================================Login Successfully============================================================== ");
+        } catch (Exception e) {
+            TakeScreenshots.takeScreenshot(driver, "testSCR");
+        }
     }
         @After
         public void tearDown() {
