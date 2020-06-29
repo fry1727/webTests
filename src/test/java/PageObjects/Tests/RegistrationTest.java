@@ -1,5 +1,6 @@
 package PageObjects.Tests;
 
+import Avanta.com.CRUD.PasswordGetCRUD;
 import PageObjects.Pages.RegistrationPage;
 import PageObjects.tools.DriverWithOptions;
 import PageObjects.tools.UsersData;
@@ -21,25 +22,20 @@ public class RegistrationTest {
 
     @Before
 
-    public void setUp() {
-
-        driverWithOptions = new DriverWithOptions();
-        driverWithOptions.diverOpt();
-        this.driver = driverWithOptions.driver;
-        usersData = new UsersData();
-        Random random = new Random();
-        int randomCount = random.nextInt(1000000);
-        String newUser = "test.1autoreg" + randomCount  + "@yopmail.com";
-        usersData.setEmail(newUser);
-        usersData.setName("PikaAuto");
+    public void setUp() throws InterruptedException {
+        RegistrationPage1 registrationPage1 = new RegistrationPage1();
+        registrationPage1.setUp();
+        registrationPage1.registrationPage1();
+        registrationPage1.tearDown();
 
     }
 
     @Test
     public void reg () throws InterruptedException {
-        driver.get("https://m.meetville.com/");
-        TimeUnit.SECONDS.sleep(1);
         new RegistrationPage1();
+
+
+
 
 
 

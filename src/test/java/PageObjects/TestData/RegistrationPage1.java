@@ -1,8 +1,5 @@
 package PageObjects.TestData;
 
-import Avanta.com.App;
-import PageObjects.Pages.LoginPage;
-import PageObjects.Pages.PeopleNearbyPage;
 import PageObjects.Pages.PortrayYourselfPage;
 import PageObjects.Pages.RegistrationMainPage;
 import PageObjects.tools.ApplicationTexts;
@@ -11,7 +8,6 @@ import PageObjects.tools.UsersData;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.Random;
@@ -27,7 +23,7 @@ public class RegistrationPage1 {
     UsersData usersData;
 
 
-/*    @Before
+    @Before
 
     public void setUp() {
 
@@ -42,11 +38,11 @@ public class RegistrationPage1 {
         usersData.setName("PikaAuto");
 
 
-    }*/
+    }
 
-
-    public RegistrationPage1() throws InterruptedException {
-//        driver.get("https://m.meetville.com/");
+@Test
+    public void registrationPage1() throws InterruptedException {
+        driver.get("https://m.meetville.com/");
 
         RegistrationMainPage.registrationMainImAManButton(driver).click();              //Choose button I'm a man
         //=========================================================Page 2=====================================================================================================
@@ -71,5 +67,9 @@ public class RegistrationPage1 {
         assertThat(PortrayYourselfPage.PYTapTheOptionsToDescribeYourself(driver).getText(), is(ApplicationTexts.tapTheOptionsText(toString()) + "\n" + ApplicationTexts.toDescribeYourself(toString())));
 
         System.out.println(" =======================================================Registration main page complete Successfully============================================================== ");
+    }
+    @After
+    public void tearDown() {
+        driver.quit();
     }
 }
