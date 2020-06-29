@@ -37,7 +37,7 @@ String acces;
         driverWithOptions.diverOpt();
         this.driver = driverWithOptions.driver;
         usersData = new UsersData();
-        usersData.setEmail("test.userch23009@yopmail.com");
+        usersData.setEmail("test.userch2123@yopmail.com");
         usersData.setPassword("111111");
         try {
 //            final Response postResult = Request.Post("https://api.meetville.com/graphql")
@@ -65,10 +65,10 @@ String acces;
                             "\"os\":\"Android\",\"osv\":\"6.0\",\"did\":\"EFFBBF4C-96EC-42D7-87B3-F37B77D2F210\",\"dname\":\"Nexus 5\",\"decsep\":\".\"," +
                             "\"csymbol\":\".\",\"screen\":\"1000x1242\",\"timezone\":\"Europe/Minsk\",\"push\":0,\"buildv\":\"2.4.2\"}")
                     .execute();
-            System.out.println(postResult.returnContent().toString());
+           // System.out.println(postResult.returnContent().toString());
 
-//           String s = (postResult.returnResponse().getFirstHeader("Set-Cookie").toString());
-//            String[]lines=s.split("\n");
+           String s = (postResult.returnResponse().getFirstHeader("Set-Cookie").toString());
+  //          String[]lines=s.split("\n");
 //            for (String line : lines) {
 //
 //                int pos = line.indexOf(";");
@@ -76,12 +76,8 @@ String acces;
 //                System.out.println(ACCToken);
 //                acces = ACCToken;
 //            }
-//
-//
 
-            // System.out.println(postResult.returnContent().toString());
-
-
+            System.out.println(s);
 
 
 

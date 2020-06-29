@@ -1,4 +1,4 @@
-package PageObjects.Tests;
+package PageObjects.TestData;
 
 import PageObjects.Pages.RegistrationMainPage;
 import PageObjects.tools.ApplicationTexts;

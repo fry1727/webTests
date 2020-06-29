@@ -1,4 +1,4 @@
-package PageObjects.Tests;
+package PageObjects.TestData;
 
 import PageObjects.Pages.*;
 import PageObjects.tools.ApplicationTexts;
@@ -52,9 +52,7 @@ public class PortrayYourselfTest {
                             "\"csymbol\":\".\",\"screen\":\"1000x1242\",\"timezone\":\"Europe/Minsk\",\"push\":0,\"buildv\":\"2.4.2\"}")
                     .execute();
 
-            System.out.println(postResult.returnResponse().toString());
 
-            System.out.println(postResult.returnContent().toString());
 
         } catch (Exception Ex) {
             System.out.println(Ex.getMessage());

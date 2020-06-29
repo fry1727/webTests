@@ -1,16 +1,16 @@
-package PageObjects.Tests;
+package PageObjects.TestData;
 
-import PageObjects.Pages.*;
+import PageObjects.Pages.InterestsRegistrationPage;
+import PageObjects.Pages.LoginPage;
+import PageObjects.Pages.PhotoUploadPage;
+import PageObjects.Pages.PortrayYourselfPage;
 import PageObjects.tools.ApplicationTexts;
 import PageObjects.tools.DriverWithOptions;
 import PageObjects.tools.UsersData;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -19,7 +19,8 @@ import java.util.concurrent.TimeUnit;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
-public class PhotoUploadTest {
+public class InterestsRegistrationTest {
+
     private ChromeDriver driver;
     DriverWithOptions driverWithOptions;
     UsersData usersData;
@@ -32,6 +33,7 @@ public class PhotoUploadTest {
         driverWithOptions = new DriverWithOptions();
         driverWithOptions.diverOpt();
         this.driver = driverWithOptions.driver;
+        usersData = new UsersData();
         usersData = new UsersData();
         usersData.setEmail("test.1autoreg39510@yopmail.com");
         usersData.setPassword("111111");
@@ -60,7 +62,7 @@ public class PhotoUploadTest {
 
 
     @Test
-    public void phUploadTest() throws AWTException, InterruptedException {
+    public void interestsTest() throws AWTException, InterruptedException {
         driver.get("https://m.meetville.com/login");
         LoginPage.login_email(driver).click();
         LoginPage.login_email(driver).sendKeys(usersData.getEmail());
@@ -68,25 +70,28 @@ public class PhotoUploadTest {
         LoginPage.login_password(driver).sendKeys(usersData.getPassword());
         LoginPage.login_confirmButton(driver).click();
 
-        // driver.get("https://m.meetville.com/registration_steps/photoUpload");
+        assertThat(InterestsRegistrationPage.interestsPickUpAtLeast5Interests(driver).getText(),
+                is(ApplicationTexts.pickUpAtLeast5Interests(toString())));
 
+        InterestsRegistrationPage.interestsCampingHiking(driver).click();
 
-        PhotoUploadPage.photoUploadAddPhotoButton(driver).sendKeys("/Users/yskiruk/IdeaProjects/webTests/src/recources/1_d_850.jpg");
-        PhotoUploadPage.photoUploadSaveAndContinueButton(driver).click();
-        TimeUnit.SECONDS.sleep(10);
-        assertThat(PeopleNearbyPage.pn_title(driver).getText(), is(ApplicationTexts.peopleNearbyText(toString())));
-        System.out.println(" =======================================================PhotoUpload page checking complete Successfully============================================================== ");
+        InterestsRegistrationPage.interestsCharity(driver).click();
 
+        InterestsRegistrationPage.interestsCoking(driver).click();
 
+        InterestsRegistrationPage.interestsCollecting(driver).click();
 
+        InterestsRegistrationPage.interestsCycling(driver).click();
 
+        InterestsRegistrationPage.interestsContinueButton(driver).click();
+
+        assertThat(PhotoUploadPage.photoUploadUploadYourPhotos(driver).getText(), is(ApplicationTexts.uploadYourPhotos(toString())));
+        System.out.println(" =======================================================Interests page checking complete Successfully============================================================== ");
     }
-    @After
+
+        @After
     public void tearDown() {
         driver.quit();
     }
 
 }
-
-
-

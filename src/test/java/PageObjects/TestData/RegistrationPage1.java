@@ -1,4 +1,4 @@
-package PageObjects.Tests;
+package PageObjects.TestData;
 
 import Avanta.com.App;
 import PageObjects.Pages.LoginPage;
@@ -27,7 +27,7 @@ public class RegistrationPage1 {
     UsersData usersData;
 
 
-    @Before
+/*    @Before
 
     public void setUp() {
 
@@ -42,11 +42,11 @@ public class RegistrationPage1 {
         usersData.setName("PikaAuto");
 
 
-    }
+    }*/
 
-    @Test
-    public void regPage1() throws InterruptedException {
-        driver.get("https://m.meetville.com/");
+
+    public RegistrationPage1() throws InterruptedException {
+//        driver.get("https://m.meetville.com/");
 
         RegistrationMainPage.registrationMainImAManButton(driver).click();              //Choose button I'm a man
         //=========================================================Page 2=====================================================================================================
@@ -68,12 +68,8 @@ public class RegistrationPage1 {
         RegistrationMainPage.registrationMain5EmailInput(driver).sendKeys(usersData.getEmail());
         RegistrationMainPage.registrationMain5ContinueButton(driver).click();       //нажатие кнопки Continue
         //=========================================================Проверка перехода на страницу portray yourself
-        assertThat(PortrayYourselfPage.PYTapTheOptionsToDescribeYourself(driver).getText(), is(ApplicationTexts.tapTheOptionsText(toString())+  "\n" + ApplicationTexts.toDescribeYourself(toString())));
+        assertThat(PortrayYourselfPage.PYTapTheOptionsToDescribeYourself(driver).getText(), is(ApplicationTexts.tapTheOptionsText(toString()) + "\n" + ApplicationTexts.toDescribeYourself(toString())));
 
         System.out.println(" =======================================================Registration main page complete Successfully============================================================== ");
-    }
-    @After
-    public void tearDown() {
-        driver.quit();
     }
 }
